@@ -200,14 +200,17 @@ Samma sak i `integritetspolicy.html` och `404.html`.
 
 ## Koppla in bokningskalendern
 
-Besökaren klickar på **Boka thaimassage**. Då öppnas kalendern inne på
-sidan, och kunden väljer 30 eller 60 minuter och sedan en tid.
+Besökaren väljer först behandling — **Thaimassage** eller **Oljemassage**.
+Då öppnas kalendern inne på sidan, och kunden väljer 30 eller 60 minuter
+och sedan en tid. Flikar högst upp gör att man kan byta behandling utan
+att lämna sidan.
 
 Inställningen ligger i `index.html`. Sök efter `ÄNDRA HÄR`:
 
 ```js
 var CAL_EVENTS = [
-  { label: "Boka thaimassage", price: "", link: "canangawellness/thaimassage", namespace: "thaimassage" }
+  { label: "Thaimassage", price: "", link: "canangawellness/thaimassage", namespace: "thaimassage" },
+  { label: "Oljemassage", price: "", link: "canangawellness/oljemassage", namespace: "oljemassage" }
 ];
 ```
 
@@ -222,33 +225,6 @@ var CAL_EVENTS = [
 **inte** upp här av sig själv — du måste lägga till en rad. Med två eller
 fler rader visas flikar så att kunden kan byta behandling utan att lämna
 sidan.
-
-### Oljemassagen saknas i Cal.com
-
-Webbplatsen visar två behandlingar, men Cal.com har bara **thaimassage**
-upplagd. Därför går bara den att boka online. Oljemassage bokas på telefon
-tills behandlingen är upplagd i Cal.com.
-
-Så här kopplar du in den:
-
-1. Skapa en event type i Cal.com som heter **Oljemassage**, med längderna
-   30 min och 60 min.
-2. Kontrollera vad den heter i adressen, alltså vad som står efter
-   `cal.com/canangawellness/`.
-3. I `index.html`, sök efter `OLJEMASSAGE SAKNAS` och följ instruktionen
-   som står där.
-
-Då får bokningsrutan två knappar, en per behandling, och kunden kan byta
-mellan dem utan att lämna sidan.
-
-> ⚠️ **Byt inte användarnamn i Cal.com** om du inte måste. Gör du det
-> slutar kalendern fungera direkt, och `link` ovan måste uppdateras till
-> det nya namnet. Vill du ändra hur namnet *ser ut* för kunden — ändra
-> visningsnamnet under Settings → Profile i stället, det påverkar
-> ingenting här.
-
-Om länken är fel visar sidan automatiskt "Ring oss så bokar vi åt dig"
-i stället för en trasig kalender.
 
 ### Öppettider i kalendern
 
@@ -301,9 +277,6 @@ Vänta 1–2 minuter, ladda sedan om webbplatsen. Ändringen är ute.
 - [ ] Rätta visningsnamnet i Cal.com: det står **PattPatt** i kalendern,
       troligen ett skrivfel. Ändras under Settings → Profile och påverkar
       ingenting i koden.
-- [ ] Lägg upp **Oljemassage** som event type i Cal.com — se avsnittet
-      "Oljemassagen saknas i Cal.com" ovan. Tills det är gjort går den
-      behandlingen bara att boka per telefon.
 - [ ] Vill du visa e-postadress på startsidan? Sök efter `E-POST` i
       `index.html` och ta bort kommentarstecknen runt raden
 - [ ] Öppna sidan i din egen telefon och kontrollera att allt ser rätt ut

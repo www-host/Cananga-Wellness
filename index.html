@@ -185,9 +185,9 @@
            till en annan leverantör (Bokadirekt, Setmore, Boka.se ...)
            — radera hela blocket och klistra in deras kod i stället.
 
-           KALENDERN ÄR INKOPPLAD mot Cal.com-kontot canangawellness
-           och behandlingen "thaimassage". Besökaren väljer 30 eller
-           60 minuter och sedan en tid.
+           KALENDERN ÄR INKOPPLAD mot Cal.com-kontot canangawellness,
+           med behandlingarna "thaimassage" och "oljemassage". Besökaren
+           väljer behandling, sedan 30 eller 60 minuter och en tid.
 
            EN RAD I CAL_EVENTS = EN KNAPP. Lägger du till en behandling
            i Cal.com dyker den INTE upp här automatiskt — du måste lägga
@@ -219,17 +219,8 @@
              Ta bort en genom att radera raden. Knapparna på sidan
              byggs automatiskt utifrån den här listan. */
           var CAL_EVENTS = [
-            { label: "Boka thaimassage", price: "", link: "canangawellness/thaimassage", namespace: "thaimassage" }
-
-            /* OLJEMASSAGE SAKNAS ÄNNU I CAL.COM.
-               Skapa en event type som heter Oljemassage med längderna
-               30 min och 60 min. Ta sedan bort snedstrecken runt raden
-               nedan och sätt ett komma efter raden ovan. Kontrollera att
-               slug:en efter cal.com/canangawellness/ verkligen heter
-               "oljemassage" — står det något annat, skriv det i stället.
-
-            , { label: "Boka oljemassage", price: "", link: "canangawellness/oljemassage", namespace: "oljemassage" }
-            */
+            { label: "Thaimassage", price: "", link: "canangawellness/thaimassage", namespace: "thaimassage" },
+            { label: "Oljemassage", price: "", link: "canangawellness/oljemassage", namespace: "oljemassage" }
           ];
         </script>
 
@@ -237,8 +228,8 @@
              Ingen kontakt med Cal.com sker förrän man klickar. -->
         <div class="booking__gate" id="cal-gate">
           <p class="booking__gate-text">
-            I kalendern väljer du längd, dag och tid. Oljemassage bokar du
-            på telefon tills vidare.
+            Välj behandling här nedanför. I kalendern väljer du sedan 30
+            eller 60 minuter, dag och tid.
           </p>
           <div class="booking__choices" id="cal-choices"></div>
         </div>
