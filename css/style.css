@@ -516,12 +516,7 @@ code {
 
 .treatments { display: grid; gap: var(--s-4); }
 
-/* Kortet är en flexkolumn så att bokningsknappen kan tryckas till
-   underkanten. Utan det hamnar knapparna på olika höjd när de två
-   behandlingstexterna är olika långa. */
 .treatment {
-  display: flex;
-  flex-direction: column;
   background: var(--surface-raised);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
@@ -549,7 +544,7 @@ code {
 
 /* De två längderna inuti ett behandlingskort.
    max-width: none behövs för att p-taggen annars ärver --measure. */
-.options { display: grid; margin: 0 0 var(--s-6); }
+.options { display: grid; }
 
 .option {
   padding: var(--s-4) 0;
@@ -583,8 +578,6 @@ code {
   font-size: var(--fs--1);
 }
 
-.treatment__book { margin: auto 0 0; max-width: none; }
-.treatment__book .btn { width: 100%; }
 
 /* ---------------------------------------------------------------------
    Bokning

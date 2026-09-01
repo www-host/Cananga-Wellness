@@ -116,10 +116,6 @@ med `</li>`. Klistra in kopian direkt efter, och ändra namn, text och priser:
       <p class="option__desc">Vad som ingår i den långa behandlingen.</p>
     </li>
   </ul>
-
-  <p class="treatment__book">
-    <a class="btn btn--primary" href="#boka">Boka fotmassage</a>
-  </p>
 </li>
 ```
 
@@ -230,9 +226,8 @@ sidan.
 ### Oljemassagen saknas i Cal.com
 
 Webbplatsen visar två behandlingar, men Cal.com har bara **thaimassage**
-upplagd. Därför pekar oljemassagens knapp på telefonnumret i stället för
-på kalendern — annars hade kunden hamnat i en kalender som heter
-Thaimassage.
+upplagd. Därför går bara den att boka online. Oljemassage bokas på telefon
+tills behandlingen är upplagd i Cal.com.
 
 Så här kopplar du in den:
 
@@ -242,8 +237,9 @@ Så här kopplar du in den:
    `cal.com/canangawellness/`.
 3. I `index.html`, sök efter `OLJEMASSAGE SAKNAS` och följ instruktionen
    som står där.
-4. Sök sedan efter `Ring och boka oljemassage` och byt tillbaka den
-   knappen till kalendern — instruktionen står i kommentaren ovanför.
+
+Då får bokningsrutan två knappar, en per behandling, och kunden kan byta
+mellan dem utan att lämna sidan.
 
 > ⚠️ **Byt inte användarnamn i Cal.com** om du inte måste. Gör du det
 > slutar kalendern fungera direkt, och `link` ovan måste uppdateras till
