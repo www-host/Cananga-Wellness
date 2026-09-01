@@ -204,25 +204,46 @@ Samma sak i `integritetspolicy.html` och `404.html`.
 
 ## Koppla in bokningskalendern
 
-Besökaren klickar på **Visa bokningskalender**. Då öppnas hela din
-Cal.com-kalender inne på sidan, och kunden väljer själv 30 eller 60
-minuter och sedan en tid.
+Besökaren klickar på **Boka thaimassage**. Då öppnas kalendern inne på
+sidan, och kunden väljer 30 eller 60 minuter och sedan en tid.
 
 Inställningen ligger i `index.html`. Sök efter `ÄNDRA HÄR`:
 
 ```js
 var CAL_EVENTS = [
-  { label: "Visa bokningskalender", price: "", link: "canangewellness-vjsgfw", namespace: "boka" }
+  { label: "Boka thaimassage", price: "", link: "canangawellness/thaimassage", namespace: "thaimassage" }
 ];
 ```
 
 - `label` — texten på knappen här på webbplatsen
-- `link` — ditt användarnamn, alltså det som står efter `cal.com/`
-- `namespace` och `price` — låt stå som de är
+- `link` — allt som står efter `cal.com/` i bokningslänken, alltså både
+  kontonamnet och behandlingens namn, med snedstreck emellan
+- `namespace` — ett eget kortnamn per behandling. Två behandlingar får
+  aldrig ha samma.
+- `price` — låt stå tom
 
-**Lägger du till en behandling i Cal.com** dyker den upp i kalendern
-automatiskt — du behöver inte ändra något här. Men lägg till den i
-listan **Behandlingar** längre upp på sidan också, den är separat.
+**En rad = en knapp.** Lägger du till en behandling i Cal.com dyker den
+**inte** upp här av sig själv — du måste lägga till en rad. Med två eller
+fler rader visas flikar så att kunden kan byta behandling utan att lämna
+sidan.
+
+### Oljemassagen saknas i Cal.com
+
+Webbplatsen visar två behandlingar, men Cal.com har bara **thaimassage**
+upplagd. Därför pekar oljemassagens knapp på telefonnumret i stället för
+på kalendern — annars hade kunden hamnat i en kalender som heter
+Thaimassage.
+
+Så här kopplar du in den:
+
+1. Skapa en event type i Cal.com som heter **Oljemassage**, med längderna
+   30 min och 60 min.
+2. Kontrollera vad den heter i adressen, alltså vad som står efter
+   `cal.com/canangawellness/`.
+3. I `index.html`, sök efter `OLJEMASSAGE SAKNAS` och följ instruktionen
+   som står där.
+4. Sök sedan efter `Ring och boka oljemassage` och byt tillbaka den
+   knappen till kalendern — instruktionen står i kommentaren ovanför.
 
 > ⚠️ **Byt inte användarnamn i Cal.com** om du inte måste. Gör du det
 > slutar kalendern fungera direkt, och `link` ovan måste uppdateras till
@@ -281,8 +302,12 @@ Vänta 1–2 minuter, ladda sedan om webbplatsen. Ändringen är ute.
 - [ ] Fyll i organisationsnummer i `integritetspolicy.html` (rubrik 1)
 - [ ] Fyll i e-postadress i `integritetspolicy.html` (rubrik 1 och 9)
 - [ ] Ta bort den markerade rutan "Att fylla i innan publicering" i samma fil
-- [ ] Rätta namnet i Cal.com: profilen heter `cananage-wellness`, ska vara
-      `cananga-wellness` (syns för kunden i bokningskalendern)
+- [ ] Rätta visningsnamnet i Cal.com: det står **PattPatt** i kalendern,
+      troligen ett skrivfel. Ändras under Settings → Profile och påverkar
+      ingenting i koden.
+- [ ] Lägg upp **Oljemassage** som event type i Cal.com — se avsnittet
+      "Oljemassagen saknas i Cal.com" ovan. Tills det är gjort går den
+      behandlingen bara att boka per telefon.
 - [ ] Vill du visa e-postadress på startsidan? Sök efter `E-POST` i
       `index.html` och ta bort kommentarstecknen runt raden
 - [ ] Öppna sidan i din egen telefon och kontrollera att allt ser rätt ut

@@ -159,8 +159,13 @@
             </li>
           </ul>
 
+          <!-- Oljemassage går inte att boka online ännu — det finns ingen
+               event type för den i Cal.com. Så länge det är så pekar
+               knappen på telefonnumret i stället för på kalendern, som
+               bara innehåller thaimassage. När behandlingen är upplagd:
+               byt href till "#boka" och texten till "Boka oljemassage". -->
           <p class="treatment__book">
-            <a class="btn btn--primary" href="#boka">Boka oljemassage</a>
+            <a class="btn btn--primary" href="tel:+46761739845">Ring och boka oljemassage</a>
           </p>
         </li>
         <!-- SLUT PÅ BEHANDLINGSBLOCK -->
@@ -192,14 +197,15 @@
            till en annan leverantör (Bokadirekt, Setmore, Boka.se ...)
            — radera hela blocket och klistra in deras kod i stället.
 
-           KALENDERN ÄR INKOPPLAD mot Cal.com-kontot
-           canangewellness-vjsgfw. Knappen öppnar hela kontots kalender,
-           där besökaren själv väljer 30 eller 60 minuter och sedan tid.
+           KALENDERN ÄR INKOPPLAD mot Cal.com-kontot canangawellness
+           och behandlingen "thaimassage". Besökaren väljer 30 eller
+           60 minuter och sedan en tid.
 
-           Därför behöver du INTE ändra något här när du lägger till
-           eller tar bort en behandling i Cal.com — den dyker upp i
-           kalendern automatiskt. Men glöm inte att lägga till den i
-           listan "Behandlingar" längre upp på sidan, den är separat.
+           EN RAD I CAL_EVENTS = EN KNAPP. Lägger du till en behandling
+           i Cal.com dyker den INTE upp här automatiskt — du måste lägga
+           till en rad i listan nedan med behandlingens slug. Och lägg
+           till den i listan "Behandlingar" längre upp på sidan också,
+           den är separat.
 
            BYTER DU ANVÄNDARNAMN i Cal.com slutar kalendern att
            fungera. Då måste "link" nedan uppdateras till det nya
@@ -225,7 +231,17 @@
              Ta bort en genom att radera raden. Knapparna på sidan
              byggs automatiskt utifrån den här listan. */
           var CAL_EVENTS = [
-            { label: "Visa bokningskalender", price: "", link: "canangewellness-vjsgfw", namespace: "boka" }
+            { label: "Boka thaimassage", price: "", link: "canangawellness/thaimassage", namespace: "thaimassage" }
+
+            /* OLJEMASSAGE SAKNAS ÄNNU I CAL.COM.
+               Skapa en event type som heter Oljemassage med längderna
+               30 min och 60 min. Ta sedan bort snedstrecken runt raden
+               nedan och sätt ett komma efter raden ovan. Kontrollera att
+               slug:en efter cal.com/canangawellness/ verkligen heter
+               "oljemassage" — står det något annat, skriv det i stället.
+
+            , { label: "Boka oljemassage", price: "", link: "canangawellness/oljemassage", namespace: "oljemassage" }
+            */
           ];
         </script>
 
@@ -233,7 +249,8 @@
              Ingen kontakt med Cal.com sker förrän man klickar. -->
         <div class="booking__gate" id="cal-gate">
           <p class="booking__gate-text">
-            I kalendern väljer du behandling, dag och tid.
+            I kalendern väljer du längd, dag och tid. Oljemassage bokar du
+            på telefon tills vidare.
           </p>
           <div class="booking__choices" id="cal-choices"></div>
         </div>
@@ -387,7 +404,7 @@
           Cal.ns[ev.namespace]("ui", {
             hideEventTypeDetails: false,
             layout: "month_view",
-            cssVarsPerTheme: { light: { "cal-brand": "#A65331" } }
+            cssVarsPerTheme: { light: { "cal-brand": "#2A5A34" } }
           });
 
           /* Cal.com säger själv till om länken är fel eller kalendern är klar.
