@@ -45,20 +45,23 @@ webbläsaren så ser du resultatet på en gång.
 Öppna `index.html` i en textredigerare (TextEdit, Anteckningar eller
 Visual Studio Code — vad som helst som visar ren text).
 
-Sidan har två behandlingar: 60 min för 600 kr och 30 min för 400 kr.
-Sök efter priset du vill ändra (`600` eller `400`) så hittar du **två
-ställen**. Båda måste ändras.
+Sidan har två behandlingar — traditionell thaimassage och oljemassage — och
+båda kostar lika mycket: 30 min 400 kr, 60 min 600 kr.
 
-**Ställe 1 — det kunden ser:**
+Sök efter priset du vill ändra (`600` eller `400`). Eftersom priset står på
+båda behandlingarna **och** i Googles del hittar du **sex ställen** per
+prissiffra. Alla måste ändras.
+
+**De fyra kunden ser** (två per behandling):
 
 ```html
-<span class="treatment__amount">600&nbsp;kr</span>
+<span class="option__price">600&nbsp;kr</span>
 ```
 
 Ändra `600` till det nya priset. Låt `&nbsp;kr` stå kvar — det är ett
 mellanslag som håller ihop siffran och "kr" på samma rad.
 
-**Ställe 2 — det Google läser:**
+**De två Google läser:**
 
 Längst ner i filen, under rubriken `STRUKTURERAD DATA`:
 
@@ -68,8 +71,8 @@ Längst ner i filen, under rubriken `STRUKTURERAD DATA`:
 
 Skriv samma siffra här. Här ska det bara vara siffror, inget "kr".
 
-Varje behandling har ett eget `"price"`-block under `"makesOffer"` — se till
-att du ändrar rätt.
+Det finns fyra `"price"`-block under `"makesOffer"` — ett per behandling och
+längd. Namnet strax under talar om vilket som är vilket.
 
 Och en rad till, en bit upp i samma block, som visar prisspannet:
 
@@ -88,22 +91,41 @@ Och en rad till, en bit upp i samma block, som visar prisspannet:
 I `index.html`, sök efter `EN BEHANDLING = ETT`. Där börjar behandlingsblocket.
 
 Markera och kopiera **hela** stycket från `<li class="treatment">` till och
-med `</li>`. Klistra in kopian direkt efter, och ändra namn, pris och tid:
+med `</li>`. Klistra in kopian direkt efter, och ändra namn, text och priser:
 
 ```html
 <li class="treatment">
-  <div class="treatment__head">
-    <h3 class="treatment__name">Thaimassage 90 min</h3>
-    <p class="treatment__price">
-      <span class="treatment__amount">850&nbsp;kr</span>
-      <span class="treatment__time">90 min</span>
-    </p>
-  </div>
+  <h3 class="treatment__name">Fotmassage</h3>
   <p class="treatment__desc">
-    Samma behandling i lugnare tempo, med mer tid för rygg, axlar och ben.
+    Kort beskrivning av behandlingen, en eller två meningar.
+  </p>
+
+  <ul class="options">
+    <li class="option">
+      <p class="option__head">
+        <span class="option__time">30 minuter</span>
+        <span class="option__price">400&nbsp;kr</span>
+      </p>
+      <p class="option__desc">Vad som ingår i den korta behandlingen.</p>
+    </li>
+    <li class="option">
+      <p class="option__head">
+        <span class="option__time">60 minuter</span>
+        <span class="option__price">600&nbsp;kr</span>
+      </p>
+      <p class="option__desc">Vad som ingår i den långa behandlingen.</p>
+    </li>
+  </ul>
+
+  <p class="treatment__book">
+    <a class="btn btn--primary" href="#boka">Boka fotmassage</a>
   </p>
 </li>
 ```
+
+> Korten läggs bredvid varandra på en dator och under varandra på mobil.
+> Med tre behandlingar hamnar den tredje ensam på en egen rad — det ser
+> ofta bättre ut med två eller fyra.
 
 Vill du att den nya behandlingen också ska synas för Google — kopiera blocket
 under `"makesOffer"` längst ner i filen på samma sätt, och sätt ett komma
@@ -126,7 +148,7 @@ I `index.html`, sök efter `ÖPPETTIDER`. Där ligger listan:
 <div class="hours__row"><dt>Måndag</dt><dd>10:00–21:00</dd></div>
 ```
 
-Ändra tiderna mellan `<dd>` och `</dd>`. Håller ni stängt en dag skriver du:
+Ändra tiderna mellan `<dd>` och `</dd>`. Lördag står redan som stängt:
 
 ```html
 <div class="hours__row"><dt>Söndag</dt><dd>Stängt</dd></div>
@@ -140,9 +162,14 @@ I `index.html`, sök efter `ÖPPETTIDER`. Där ligger listan:
 "closes": "21:00"
 ```
 
-Har alla dagar samma tider räcker det att ändra `opens` och `closes`.
-Stänger ni en dag — ta bort den dagen ur listan. Söndag heter `"Sunday"`,
-lördag `"Saturday"`.
+Har alla öppna dagar samma tider räcker det att ändra `opens` och `closes`.
+Stänger ni en dag till — ta bort den dagen ur listan. Söndag heter
+`"Sunday"`, lördag `"Saturday"`. Lördag är redan borttagen, eftersom ni
+håller stängt då.
+
+Ändrar du öppettiderna måste du också ändra texten på tre andra ställen i
+`index.html`: `<meta name="description">` och `og:description` högst upp,
+samt raden `hero__meta` i hero-sektionen.
 
 Har olika dagar olika tider behövs två block. Fråga hellre om hjälp än gissa
 här — resten av sidan påverkas inte om det blir fel, men Google kan sluta
