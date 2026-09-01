@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Källa till delningsbilden</title>
+<!--
+  KÄLLAN TILL BILDEN SOM VISAS I SMS, MESSENGER OCH FACEBOOK.
+
+  Den här filen är inte till för besökare — den finns för att bilden ska
+  gå att göra om när priser, öppettider eller behandlingar ändras.
+
+  GÖRA OM BILDEN:
+  Öppna filen i webbläsaren, sätt fönstret till exakt 1200 x 630 pixlar
+  och ta en skärmbild. Spara som img/og-image-v2.png och skriv över den
+  gamla. Byter du filnamn måste og:image ändras i index.html och
+  integritetspolicy.html, samt "image" i den strukturerade datan.
+
+  Ändrar du bilden men behåller filnamnet kan det ta veckor innan SMS och
+  Facebook visar den nya — de cachar per adress. Byt hellre filnamn då.
+-->
+<style>
+  :root {
+    --surface: #FDF9F4;
+    --surface-alt: #F5F1E6;
+    --ink: #14301C;
+    --accent: #2A5A34;
+    --accent-warm: #3D7A4A;
+    --muted: #4A5B4E;
+    --line: #D3E2D6;
+    --font-display: "Avenir Next", Avenir, "Century Gothic", Futura,
+                    "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 630px;
+    display: flex; align-items: center;
+    font-family: var(--font-display);
+    background: var(--surface);
+    background-image:
+      radial-gradient(circle at 78% 22%, rgba(42,90,52,0.10), transparent 58%),
+      linear-gradient(160deg, var(--surface) 0%, var(--surface-alt) 100%);
+    -webkit-font-smoothing: antialiased;
+  }
+  .bar { width: 14px; align-self: stretch; background: var(--accent); flex: 0 0 auto; }
+  .inner { padding: 0 88px; }
+  .eyebrow {
+    font-size: 22px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 26px;
+  }
+  h1 {
+    font-size: 92px; font-weight: 700; line-height: 1.04;
+    letter-spacing: -0.022em; color: var(--ink); margin-bottom: 30px;
+  }
+  .meta { font-size: 27px; color: var(--muted); margin-bottom: 40px; }
+  .pills { display: flex; gap: 16px; margin-bottom: 60px; }
+  .pill {
+    font-size: 23px; font-weight: 600; color: var(--accent);
+    background: #FFFFFF; border: 1px solid var(--line);
+    border-radius: 999px; padding: 14px 28px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 14px;
+    font-size: 27px; font-weight: 700; color: var(--ink);
+  }
+  .brand svg { color: var(--accent-warm); }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <div class="inner">
+    <p class="eyebrow">Helsingborg</p>
+    <h1>Thaimassage<br>&amp; oljemassage</h1>
+    <p class="meta">Aschebergsgatan 14 &middot; Öppet alla dagar utom lördag, 10&ndash;21</p>
+    <div class="pills">
+      <span class="pill">30 min &middot; 400 kr</span>
+      <span class="pill">60 min &middot; 600 kr</span>
+    </div>
+    <p class="brand">
+      <svg viewBox="0 0 32 32" width="34" height="34">
+        <path d="M16 3c4.5 4 6.8 8 6.8 12a6.8 6.8 0 0 1-13.6 0c0-4 2.3-8 6.8-12z" fill="currentColor"/>
+        <path d="M16 17v12M16 22c-2.6 0-4.7-1.4-6-3.6M16 25c2.6 0 4.7-1.4 6-3.6"
+              fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+      Cananga Wellness
+    </p>
+  </div>
+</body>
+</html>

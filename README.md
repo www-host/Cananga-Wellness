@@ -358,7 +358,9 @@ konstigt: ångra i GitHub enligt avsnittet ovan.
 | `css/style.css` | Allt utseende: färger, typsnitt, avstånd |
 | `js/main.js` | Meny på mobil, årtal i sidfoten, fast bokningsknapp |
 | `img/favicon.svg` | Den lilla ikonen i webbläsarens flik |
-| `img/og-image.png` | Bilden som visas när sidan delas i Messenger, SMS eller Facebook |
+| `img/og-image-v2.jpg` | Bilden som visas när sidan delas i Messenger, SMS eller Facebook |
+| `img/og-image.html` | Källan till delningsbilden — öppna, ta skärmbild i 1200×630 |
+| `img/og-image.png` | Gammal delningsbild. Används inte, men ligger kvar så att redan skickade länkar inte visar en trasig bild |
 | `robots.txt` | Säger till sökmotorer att de får läsa sidan |
 | `sitemap.xml` | Lista över sidorna, för sökmotorer |
 | `.nojekyll` | Teknisk fil som gör att GitHub publicerar sidan direkt |
