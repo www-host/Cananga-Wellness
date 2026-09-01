@@ -6,7 +6,7 @@ Sidan är byggd i ren HTML, CSS och JavaScript. Det finns inget program som
 behöver installeras, inget som behöver "byggas" och ingen månadskostnad.
 Filerna ligger på GitHub och visas gratis via GitHub Pages.
 
-**Adress till sidan:** https://peraakesson-cloud.github.io/cananga-wellness/
+**Adress till sidan:** https://www-host.github.io/Cananga-Wellness/
 
 ---
 
@@ -234,7 +234,7 @@ det finns kvar även om bokningssystemet ligger nere.
 
 Enklast utan program, direkt i webbläsaren:
 
-1. Gå till https://github.com/peraakesson-cloud/cananga-wellness
+1. Gå till https://github.com/www-host/Cananga-Wellness
 2. Klicka på filen du vill ändra, till exempel `index.html`.
 3. Klicka på pennan (**Edit this file**) uppe till höger.
 4. Gör din ändring.
@@ -264,7 +264,7 @@ Vänta 1–2 minuter, ladda sedan om webbplatsen. Ändringen är ute.
 
 ## Egen domän
 
-Sidan ligger idag på `peraakesson-cloud.github.io/cananga-wellness`. Vill ni ha
+Sidan ligger idag på `www-host.github.io/Cananga-Wellness`. Vill ni ha
 till exempel `canangawellness.se` gör ni så här.
 
 **1. Köp domänen** hos en registrar — Loopia, One.com, Inleed och Namecheap
@@ -274,7 +274,7 @@ till exempel `canangawellness.se` gör ni så här.
 
 | Typ | Namn | Värde |
 |---|---|---|
-| CNAME | `www` | `peraakesson-cloud.github.io` |
+| CNAME | `www` | `www-host.github.io` |
 
 Vill ni att adressen ska fungera **utan** `www` behövs fyra A-poster till:
 
@@ -297,7 +297,7 @@ www.canangawellness.se
 upp till en timme innan certifikatet är klart).
 
 **5. Byt adress i fyra filer**, så att Google och delningar pekar rätt.
-Sök efter `peraakesson-cloud.github.io/cananga-wellness` och byt till den nya
+Sök efter `www-host.github.io/Cananga-Wellness` och byt till den nya
 adressen i:
 
 - `index.html` (`canonical`, `og:url`, `og:image` och `"url"` längst ner)
