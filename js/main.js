@@ -73,12 +73,22 @@
     if (!hero) {
       head.classList.add('is-solid');
     } else if ('IntersectionObserver' in window) {
-      /* Sidhuvudet blir vitt när hero lämnar bild. rootMargin flyttar
-         brytpunkten till sidhuvudets underkant, så bytet sker precis
-         när bilden försvinner bakom det. */
+      /* Bytet sker så fort besökaren börjar rulla, inte när hero tar slut.
+         Annars glider herotexten in under det genomskinliga sidhuvudet och
+         krockar med logotypen.
+
+         Vakten är en osynlig remsa högst upp i hero. När den rullar ur bild
+         har sidan flyttat sig, och sidhuvudet blir jasminvitt. Ett
+         IntersectionObserver kostar ingenting; en scroll-lyssnare hade
+         körts vid varje bildruta. */
+      var vakt = document.createElement('div');
+      vakt.setAttribute('aria-hidden', 'true');
+      vakt.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:8px;pointer-events:none';
+      hero.appendChild(vakt);
+
       new IntersectionObserver(function (poster) {
         head.classList.toggle('is-solid', !poster[0].isIntersecting);
-      }, { rootMargin: '-72px 0px 0px 0px', threshold: 0 }).observe(hero);
+      }, { threshold: 0 }).observe(vakt);
     } else {
       head.classList.add('is-solid');
     }

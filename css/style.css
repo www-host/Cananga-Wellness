@@ -413,19 +413,25 @@ code {
    Om Cananga — blomman som verksamheten är uppkallad efter
    --------------------------------------------------------------------- */
 
-/* overflow: hidden krävs — vattenstämpeln är medvetet placerad delvis
-   utanför textspalten, och utan detta ger den vågrät rullning på sidan. */
-.about { position: relative; overflow: hidden; }
+.about { position: relative; }
 .about__grid { display: grid; gap: var(--s-7); }
 
-/* Ylang-ylang-blomman som stor, mjuk vattenstämpel. Sidans ENDA
-   vattenstämpel — den tappar sin verkan om den upprepas. */
-.about__mark {
-  position: absolute; right: -6%; top: 50%; translate: 0 -50%;
-  width: min(46vw, 30rem); color: var(--goldleaf);
-  opacity: 0.10; pointer-events: none; z-index: 0;
-}
 .about__text { position: relative; z-index: 1; }
+
+/* Fotot av blomman verksamheten är uppkallad efter. Det ersatte en
+   SVG-vattenstämpel: ett riktigt foto illustrerar stycket bättre, och
+   text ovanpå en nedtonad bild är alltid en kontrastrisk. */
+.about__photo { margin: 0; }
+.about__photo img {
+  display: block; width: 100%;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+}
+.about__photo figcaption {
+  margin-top: var(--s-3);
+  font-size: var(--fs--1);
+  color: var(--ink-muted);
+}
 .about__lead { font-size: var(--fs-1); color: var(--ink); }
 
 /* Ruta för certifiering. Ligger dold tills den fylls i — se HTML-filen. */
@@ -726,7 +732,6 @@ body.has-mobile-cta { padding-bottom: 5rem; }
   .js .nav[data-open="true"] .nav__cta { margin-top: var(--s-3); }
   .js .nav[data-open="true"] .nav__cta .btn { color: var(--jade); border-color: var(--line-strong); }
 
-  .about__mark { display: none; }
   .hero__media img { object-position: 62% 45%; }
 
   /* På smal skärm ligger texten över hela bilden i stället för bara över
