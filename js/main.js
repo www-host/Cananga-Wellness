@@ -1,10 +1,11 @@
 /* ==========================================================================
    Cananga Wellness — webbplatsens enda JavaScript
 
-   Håller tre saker igång:
+   Håller fyra saker igång:
      1. Årtalet i sidfoten
      2. Menyknappen på mobil
-     3. Den fasta "Boka tid"-knappen längst ner på mobil
+     3. Sidhuvudet: genomskinligt över herobilden, jasminvitt när man rullat
+     4. Den fasta "Boka tid"-knappen längst ner på mobil
 
    Bokningskalendern hanteras INTE härifrån — den ligger i sitt eget
    block i index.html så att den är lätt att byta ut.
@@ -55,7 +56,36 @@
   }
 
   /* ---------------------------------------------------------------
-     3. Flytta läsfokus till den sektion man hoppar till.
+     3. Sidhuvudet.
+
+        Över herobilden ligger det genomskinligt med guldtext, eftersom
+        bilden bakom är mörk. Så fort man rullat förbi hero byter det
+        till jasminvit botten med mörk text, annars blir texten oläslig
+        mot sidans ljusa bakgrund.
+
+        Sidor utan hero (integritetspolicyn, 404) har ingen mörk bild att
+        ligga över, så där är sidhuvudet vitt från början.
+     --------------------------------------------------------------- */
+  var head = document.querySelector('.site-head');
+  var hero = document.querySelector('.hero');
+
+  if (head) {
+    if (!hero) {
+      head.classList.add('is-solid');
+    } else if ('IntersectionObserver' in window) {
+      /* Sidhuvudet blir vitt när hero lämnar bild. rootMargin flyttar
+         brytpunkten till sidhuvudets underkant, så bytet sker precis
+         när bilden försvinner bakom det. */
+      new IntersectionObserver(function (poster) {
+        head.classList.toggle('is-solid', !poster[0].isIntersecting);
+      }, { rootMargin: '-72px 0px 0px 0px', threshold: 0 }).observe(hero);
+    } else {
+      head.classList.add('is-solid');
+    }
+  }
+
+  /* ---------------------------------------------------------------
+     4. Flytta läsfokus till den sektion man hoppar till.
         Utan detta ligger tangentbordsfokus kvar i menyn och
         skärmläsare läser upp fel del av sidan.
      --------------------------------------------------------------- */
@@ -80,12 +110,11 @@
   });
 
   /* ---------------------------------------------------------------
-     4. Fast bokningsknapp längst ner på mobil.
+     5. Fast bokningsknapp längst ner på mobil.
         Visas när man rullat förbi hero-sektionen, göms igen när
         bokningssektionen syns (då behövs den inte).
      --------------------------------------------------------------- */
   var cta = document.getElementById('mobil-cta');
-  var hero = document.querySelector('.hero');
   var boka = document.getElementById('boka');
 
   if (cta && hero && boka && 'IntersectionObserver' in window) {
@@ -118,26 +147,26 @@
   }
 
   /* ---------------------------------------------------------------
-     5. Mjuk intoning när en sektion rullas in i bild.
+     6. Mjuk intoning när en sektion rullas in i bild.
 
-        Klassen sätts härifrån och inte i HTML-filen, så att sidan
-        ser likadan ut även om JavaScript är avstängt — då syns allt
-        direkt i stället för att ligga osynligt i väntan på ett skript.
+        Endast opacitet — ingen förflyttning. Klassen sätts härifrån och
+        inte i HTML-filen, så att sidan ser likadan ut även om JavaScript
+        är avstängt: då syns allt direkt i stället för att ligga osynligt
+        i väntan på ett skript.
 
         UNDANTAG, med flit:
           .hero       — ligger överst och ska synas direkt
           #boka       — bokningskalendern
-          #hitta-hit  — 360-vyn
-        De två sista innehåller inbäddat innehåll från andra sajter.
-        En förälder som animeras med opacity eller transform skapar ett
-        eget koordinatsystem, vilket kan störa hur en iframe placerar
-        sig. Ta inte bort det undantaget.
+          #kontakt    — 360-vyn
+        De två sista innehåller inbäddat innehåll från andra sajter. En
+        förälder som animeras kan skapa ett eget koordinatsystem, vilket
+        stör hur en iframe placerar sig. Ta inte bort det undantaget.
      --------------------------------------------------------------- */
   var villHaMindreRorelse = window.matchMedia &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!villHaMindreRorelse && 'IntersectionObserver' in window) {
-    var undantag = { 'boka': true, 'hitta-hit': true };
+    var undantag = { 'boka': true, 'kontakt': true };
 
     var sektioner = [].slice.call(document.querySelectorAll('main > section'))
       .filter(function (el) {

@@ -2,111 +2,152 @@
    Cananga Wellness — stilmall
    ---------------------------------------------------------------------
    Hela webbplatsens utseende styrs av värdena i :root här nedanför.
-   Vill du byta färg, textstorlek, luftighet eller rundade hörn —
-   ändra där, inte längre ner i filen.
+   Vill du byta färg, textstorlek eller luftighet — ändra där, inte
+   längre ner i filen.
+
+   FÄRGERNA KOMMER FRÅN YLANG-YLANG-BLOMMAN som salongen är uppkallad
+   efter, och från thailändskt lackarbete: guld på mörk lack, tempelgrönt,
+   ringblomsorange. Sidan är mest ljus; det djärva sparas till två, tre
+   mörka band där guldet får göra sitt jobb.
    ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   Typsnitt — självhostade, hämtas aldrig från Google
+   ---------------------------------------------------------------------
+   Kanit och Sarabun är båda ritade i Bangkok. unicode-range gör att en
+   svensk besökare bara laddar latin-filerna; latin-ext ligger kvar som
+   reserv för ovanliga tecken. å ä ö finns i latin-subsetet.
+   --------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Kanit'; font-style: normal; font-weight: 500;
+  font-display: swap; src: url('../fonts/kanit-500-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Kanit'; font-style: normal; font-weight: 500;
+  font-display: swap; src: url('../fonts/kanit-500-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Kanit'; font-style: normal; font-weight: 600;
+  font-display: swap; src: url('../fonts/kanit-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Kanit'; font-style: normal; font-weight: 600;
+  font-display: swap; src: url('../fonts/kanit-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sarabun'; font-style: normal; font-weight: 400;
+  font-display: swap; src: url('../fonts/sarabun-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sarabun'; font-style: normal; font-weight: 400;
+  font-display: swap; src: url('../fonts/sarabun-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Sarabun'; font-style: normal; font-weight: 600;
+  font-display: swap; src: url('../fonts/sarabun-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Sarabun'; font-style: normal; font-weight: 600;
+  font-display: swap; src: url('../fonts/sarabun-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
+                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
+                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
 :root {
 
-  /* --- ACCENTFÄRG (djupgrön) -----------------------------------------
-     Kontrastkontroll (WCAG AA kräver 4,5:1 för brödtext, 3:1 för grafik):
-       --accent-ink    på --surface .......... 7,7:1  ✓
-       vit text        på --accent ........... 8,0:1  ✓
-       vit text        på --accent-strong ... 10,8:1  ✓
-       --accent-warm   på --surface .......... 4,9:1  ✓
-       --accent-soft   på --ink .............. 8,3:1  ✓
-     ------------------------------------------------------------------ */
-  --accent-tint:   #EFF4EF;   /* mycket ljus bakgrundston */
-  --accent-pale:   #D3E2D6;   /* ljus kantlinje */
-  --accent-warm:   #3D7A4A;   /* dekor: streck, punkter */
-  --accent:        #2A5A34;   /* knappar (vit text ovanpå) */
-  --accent-strong: #1F4527;   /* knapp när muspekaren är över */
-  --accent-ink:    #2A5A34;   /* länkar och accentfärgad text */
-  --accent-soft:   #A8CFB0;   /* länkar på mörk bakgrund */
-  --accent-glow:   rgba(42, 90, 52, 0.13);
+  /* --- FÄRGER --------------------------------------------------------
+     Kontrastkontroll (WCAG AA: 4,5:1 brödtext, 3:1 stor text och grafik):
+       --ink          på --jasmine ......... 15,9:1  ✓
+       --ink-muted    på --jasmine .......... 6,1:1  ✓
+       --jade         på --jasmine .......... 8,5:1  ✓  rubriker, länkar
+       vit            på --jade ............. 9,1:1  ✓  primärknapp
+       --jasmine      på --lacquer ......... 17,0:1  ✓  text på mörkt
+       --on-lacq-mut  på --lacquer ......... 10,4:1  ✓
+       --goldleaf     på --lacquer .......... 7,0:1  ✓  ordmärke, linjer
+       --ylang        på --lacquer .......... 9,4:1  ✓
+       --marigold     på --lacquer .......... 5,9:1  ✓
 
-  /* --- NEUTRALER (grönskiftande på cream) ----------------------------
-       --ink    på --surface ... 13,6:1  ✓  rubriker och brödtext
-       --ink-2  på --surface .... 9,9:1  ✓
-       --muted  på --surface .... 6,9:1  ✓  dämpad brödtext
-       --faint  på --surface .... 4,6:1  ✓  klarar nu AA för brödtext
+     MÄTT OCH UNDERKÄNT — använd aldrig så här:
+       --goldleaf     på --jasmine .......... 2,4:1  ✗
+       --marigold     på --jasmine .......... 2,9:1  ✗
+     Guld och marigold hör alltså hemma ENBART på mörk lack. På ljus
+     botten bär --jade all betoning, och --marigold-dark (4,7:1) används
+     där det måste vara orange.
      ------------------------------------------------------------------ */
-  --surface:        #FDF9F4;  /* sidans bakgrund */
-  --surface-alt:    #F5F1E6;  /* varannan sektion */
-  --surface-raised: #FFFFFF;  /* kort och rutor som ligger ovanpå */
-  --line:           #E4E0D2;  /* tunna avdelare */
-  --line-strong:    #CFCBBB;  /* tydligare kant */
-  --faint:          #68766B;
-  --muted:          #4A5B4E;
-  --ink-2:          #22482B;
-  --ink:            #14301C;
+  --lacquer:        #1C1409;   /* mörk brunsvart lack — hero, band, sidfot */
+  --lacquer-2:      #2A1F10;   /* en aning ljusare, för kort på lack */
+  --jade:           #12514A;   /* tempelgrönt — knappar, länkar, rubriker */
+  --jade-deep:      #0D3B36;   /* knapp när muspekaren är över */
+  --jade-tint:      #E8F0EE;   /* mycket ljus grön bakgrundston */
+  --goldleaf:       #C79A2E;   /* guld — hårlinjer, ornament, ordmärke */
+  --ylang:          #E3B505;   /* ylang-ylang-gult — enda höga accenten */
+  --marigold:       #E4741B;   /* ringblomsorange — endast på lack */
+  --marigold-dark:  #B4530D;   /* orange som klarar kontrast på ljus botten */
+  --jasmine:        #FBF7EE;   /* varm off-white — sidans bakgrund */
+  --jasmine-2:      #F4EDE0;   /* varannan sektion */
+  --paper:          #FFFFFF;   /* kort som ligger ovanpå */
+  --ink:            #241B10;   /* brödtext på ljus botten */
+  --ink-muted:      #6B5B45;   /* dämpad brödtext */
+  --on-lacquer:     #FBF7EE;   /* brödtext på lack */
+  --on-lacq-muted:  #CFC2AC;   /* dämpad text på lack */
+  --line:           #E2DACA;   /* tunna avdelare */
+  --line-strong:    #8A7E63;   /* kant som måste synas */
 
-  /* --- TYPSNITT (systemtypsnitt — laddas aldrig från nätet) ----------
-     Rubrikerna vill ha en kraftig, geometrisk sans. Ingen sådan finns på
-     alla plattformar, så stacken tar den bästa som finns lokalt:
-     Avenir Next (Mac/iOS) → Century Gothic/Futura (Windows med Office) →
-     Segoe UI (Windows) → system-ui. Ingenting hämtas över nätet, så det
-     blir varken extra request eller layoutförskjutning när sidan laddas.
-     ------------------------------------------------------------------ */
-  --font-display: "Avenir Next", Avenir, "Century Gothic", Futura,
-                  "Segoe UI", system-ui, -apple-system, sans-serif;
-  --font-body:    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                  "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  /* --- TYPSNITT ------------------------------------------------------ */
+  --font-display: 'Kanit', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body:    'Sarabun', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
-  /* --- TEXTSTORLEKAR -------------------------------------------------
-     Varje steg är 1,25 gånger det föregående. Därför känns skillnaden
-     mellan rubriknivåerna lika stor hela vägen upp.
-     ------------------------------------------------------------------ */
-  --fs--1: 0.85rem;
+  /* --- TEXTSTORLEKAR (modulär skala 1,25) ---------------------------- */
+  --fs--1: 0.875rem;
   --fs-0:  1.0625rem;
-  --fs-1:  1.328rem;
+  --fs-1:  1.33rem;
   --fs-2:  1.66rem;
-  --fs-3:  2.076rem;
-  --fs-4:  2.595rem;
-  --fs-5:  3.243rem;
-  --fs-6:  4.054rem;
+  --fs-3:  2.07rem;
+  --fs-4:  2.59rem;
+  --fs-5:  3.24rem;
 
-  --lh-tight: 1.12;
+  --lh-tight: 1.1;
   --lh-snug:  1.3;
   --lh-body:  1.65;
+  --measure:  68ch;
 
-  /* Bekväm radlängd — längre rader blir jobbiga att läsa */
-  --measure: 65ch;
+  /* --- AVSTÅND ------------------------------------------------------- */
+  --s-1: 0.25rem;  --s-2: 0.5rem;   --s-3: 0.75rem;
+  --s-4: 1rem;     --s-5: 1.5rem;   --s-6: 2rem;
+  --s-7: 3rem;     --s-8: 4rem;     --s-9: 6rem;
 
-  /* --- AVSTÅND -------------------------------------------------------
-     En enda skala. Använd alltid ett steg härifrån, aldrig lösa värden.
-     ------------------------------------------------------------------ */
-  --s-1: 0.25rem;
-  --s-2: 0.5rem;
-  --s-3: 0.75rem;
-  --s-4: 1rem;
-  --s-5: 1.5rem;
-  --s-6: 2rem;
-  --s-7: 3rem;
-  --s-8: 4rem;
-  --s-9: 6rem;
-
-  /* --- RUNDADE HÖRN --------------------------------------------------- */
-  --r-sm:   6px;
-  --r-md:   10px;
-  --r-lg:   16px;
-  --r-full: 999px;
-
-  /* --- SKUGGOR -------------------------------------------------------
-     Flera lager med låg opacitet ger mjukare djup än en enda hård skugga.
-     ------------------------------------------------------------------ */
-  --shadow-1: 0 1px 2px rgba(33, 28, 24, 0.05);
-  --shadow-2: 0 1px 2px rgba(33, 28, 24, 0.04),
-              0 6px 16px rgba(33, 28, 24, 0.05);
-  --shadow-3: 0 1px 2px rgba(33, 28, 24, 0.04),
-              0 10px 28px rgba(33, 28, 24, 0.06),
-              0 20px 48px rgba(33, 28, 24, 0.04);
-
-  /* --- MÅTT OCH RÖRELSE ---------------------------------------------- */
-  --wrap:      68rem;
+  /* --- RUNDNING, SKUGGA, MÅTT ---------------------------------------- */
+  --r-sm: 4px;  --r-md: 8px;  --r-lg: 14px;  --r-full: 999px;
+  --shadow-1: 0 1px 2px rgba(36, 27, 16, 0.06);
+  --shadow-2: 0 2px 6px rgba(36, 27, 16, 0.06), 0 10px 26px rgba(36, 27, 16, 0.07);
+  --wrap:      70rem;
   --gutter:    clamp(1.25rem, 5vw, 2.5rem);
-  --section-y: clamp(3.5rem, 10vw, 7rem);
-  --tap:       2.75rem;            /* minsta träffyta: 44px */
+  --section-y: clamp(3.5rem, 9vw, 6.5rem);
+  --tap:       2.75rem;          /* minsta träffyta: 44px */
+  --head-h:    4.5rem;           /* sidhuvudets höjd */
   --ease:      cubic-bezier(0.2, 0.6, 0.3, 1);
   --speed:     0.18s;
 }
@@ -117,481 +158,357 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Ett element med hidden-attributet ska alltid vara dolt. Utan den här
+   raden vinner .mobile-cta { display: flex } över webbläsarens egen
+   regel, och den fasta mobilknappen syns även på stora skärmar. */
+[hidden] { display: none !important; }
+
 html {
   scroll-behavior: smooth;
-  /* Måste vara minst lika stort som det fasta sidhuvudet (73 px), annars
-     hamnar rubriken man hoppar till dolt bakom det. */
-  scroll-padding-top: 5.5rem;
+  /* Minst lika stort som det fasta sidhuvudet, annars hamnar rubriken
+     man hoppar till dold bakom det. */
+  scroll-padding-top: calc(var(--head-h) + 1rem);
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  background: var(--surface);
+  background: var(--jasmine);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--fs-0);
   line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
+
+/* Sidor utan hero (t.ex. integritetspolicyn) behöver ge plats åt det
+   fasta sidhuvudet. Sidor med hero sköter det i .hero-regeln i stället. */
+body:not(.has-hero) main { padding-top: var(--head-h); }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  color: var(--ink);
+  color: var(--jade);
   line-height: var(--lh-tight);
-  letter-spacing: -0.015em;
-  margin: 0 0 var(--s-3);
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s-4);
   text-wrap: balance;
 }
-
-h1 { font-weight: 700; }
-h2 { font-weight: 700; }
-h3 { font-weight: 700; }
-h4 { font-weight: 600; letter-spacing: -0.005em; }
+h1 { font-weight: 600; font-size: clamp(2.2rem, 6vw, var(--fs-5)); }
+h2 { font-weight: 500; font-size: clamp(var(--fs-2), 4vw, var(--fs-4)); }
+h3 { font-weight: 500; font-size: var(--fs-1); }
+h4 { font-weight: 600; font-size: var(--fs-0); }
 
 p { margin: 0 0 var(--s-4); max-width: var(--measure); }
 p:last-child { margin-bottom: 0; }
 
-a {
-  color: var(--accent-ink);
-  text-underline-offset: 0.18em;
-  transition: color var(--speed) var(--ease);
-}
-a:hover { color: var(--accent-strong); text-decoration-thickness: 2px; }
+a { color: var(--jade); text-underline-offset: 0.18em; transition: color var(--speed) var(--ease); }
+a:hover { color: var(--marigold-dark); text-decoration-thickness: 2px; }
 
-ul { margin: 0; padding: 0; list-style: none; }
-
+ul, ol { margin: 0; padding: 0; list-style: none; }
 img, svg { max-width: 100%; height: auto; }
+
+strong { font-weight: 600; }
 
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.9em;
-  background: var(--surface-alt);
-  padding: 0.1em 0.35em;
-  border-radius: var(--r-sm);
+  font-size: 0.9em; background: var(--jasmine-2);
+  padding: 0.1em 0.35em; border-radius: var(--r-sm);
 }
 
-[hidden] { display: none !important; }
-
-/* Tydlig markering för den som navigerar med tangentbord */
+/* Fokusmarkering — måste synas på både ljus och mörk botten */
 :focus-visible {
-  outline: 3px solid var(--accent-ink);
+  outline: 3px solid var(--marigold-dark);
   outline-offset: 3px;
   border-radius: var(--r-sm);
 }
-
-/* ---------------------------------------------------------------------
-   Hjälpklasser
-   --------------------------------------------------------------------- */
-
-.wrap {
-  width: 100%;
-  max-width: var(--wrap);
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-}
+.band--lacquer :focus-visible,
+.site-foot :focus-visible { outline-color: var(--ylang); }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
 .skip {
-  position: absolute;
-  left: var(--s-3);
-  top: -4rem;
-  z-index: 100;
-  background: var(--ink);
-  color: var(--surface);
-  padding: var(--s-3) var(--s-4);
-  border-radius: 0 0 var(--r-md) var(--r-md);
-  text-decoration: none;
-  transition: top var(--speed) var(--ease);
+  position: absolute; top: -100%; left: 0; z-index: 100;
+  background: var(--jade); color: var(--jasmine);
+  padding: var(--s-3) var(--s-5);
+  font-weight: 600; text-decoration: none;
 }
 .skip:focus { top: 0; }
 
-.eyebrow {
-  font-size: var(--fs--1);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent-ink);
-  font-weight: 600;
-  margin-bottom: var(--s-5);
-}
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
 
-.lead {
-  font-size: clamp(var(--fs-0), 1.4vw + 0.7rem, var(--fs-1));
-  line-height: 1.55;
-  color: var(--muted);
-  max-width: 34em;
-}
-
-.fineprint {
-  font-size: var(--fs--1);
-  color: var(--muted);
-  margin-top: var(--s-6);
-}
+.fineprint { font-size: var(--fs--1); color: var(--ink-muted); }
+.band--lacquer .fineprint { color: var(--on-lacq-muted); }
 
 /* ---------------------------------------------------------------------
-   Knappar — alla har minst 44px träffyta
+   Kanok — thailändsk flamslinga
+   ---------------------------------------------------------------------
+   Ett enda ornament, använt på ett enda sätt: en tunn guldbård som
+   ramar in de mörka sektionerna upptill och nedtill, som kanten på en
+   lackpanel. Den ritas som en tilande SVG i CSS, alltså ingen bildfil
+   och ingen extra nedladdning. Använd den inte någon annanstans — det
+   är återhållsamheten som skiljer det här från en temarestaurang.
+   --------------------------------------------------------------------- */
+
+.kanok {
+  height: 14px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 48px 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cg fill='none' stroke='%23C79A2E' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M0 12.5h48'/%3E%3Cpath d='M4 12.5c4.5 0 6.5-3 7.5-6.2C12.2 4 14 3 15.2 4.4c1.2 1.4 0 3.6-2 4.1'/%3E%3Cpath d='M28 12.5c4.5 0 6.5-3 7.5-6.2C36.2 4 38 3 39.2 4.4c1.2 1.4 0 3.6-2 4.1'/%3E%3Cpath d='M20 12.5c1.8 0 2.8-1.3 3.2-2.7'/%3E%3Cpath d='M44 12.5c1.8 0 2.8-1.3 3.2-2.7'/%3E%3C/g%3E%3C/svg%3E");
+}
+.kanok--flip { transform: scaleY(-1); }
+
+/* Guldlinjen under hero ritar sig själv en gång vid laddning, vänster
+   till höger. Det är sidans enda iscensatta rörelse. */
+.kanok--draw { transform-origin: left center; }
+.js .kanok--draw { animation: kanok-in 700ms var(--ease) both; }
+@keyframes kanok-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* ---------------------------------------------------------------------
+   Knappar
    --------------------------------------------------------------------- */
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center;
   gap: var(--s-2);
   min-height: 3rem;
   padding: var(--s-3) var(--s-6);
   border: 1px solid transparent;
   border-radius: var(--r-full);
-  font: inherit;
-  font-weight: 600;
-  font-size: var(--fs-0);
-  text-decoration: none;
-  cursor: pointer;
-  /* Endast färg, skugga och transform — aldrig mått, så inget flyttar sig */
+  font-family: var(--font-body); font-weight: 600; font-size: var(--fs-0);
+  text-decoration: none; cursor: pointer;
   transition: background-color var(--speed) var(--ease),
               border-color var(--speed) var(--ease),
               color var(--speed) var(--ease),
-              box-shadow var(--speed) var(--ease),
-              transform var(--speed) var(--ease);
+              box-shadow var(--speed) var(--ease);
 }
 
-.btn--primary {
-  background: var(--accent);
-  color: #FFFFFF;
-  box-shadow: var(--shadow-1);
-}
-.btn--primary:hover {
-  background: var(--accent-strong);
-  box-shadow: var(--shadow-2);
-  transform: translateY(-1px);
-}
-.btn--primary:active { transform: translateY(0); box-shadow: var(--shadow-1); }
-.btn--primary:disabled { opacity: 0.55; cursor: default; transform: none; }
+.btn--primary { background: var(--jade); color: #FFFFFF; box-shadow: var(--shadow-1); }
+.btn--primary:hover { background: var(--jade-deep); color: #FFFFFF; box-shadow: var(--shadow-2); }
+.btn--primary:disabled { opacity: 0.55; cursor: default; }
 
-.btn--quiet {
-  background: var(--surface-raised);
-  color: var(--accent-ink);
-  border-color: var(--line);
-}
-.btn--quiet:hover {
-  border-color: var(--accent-warm);
-  background: var(--accent-tint);
-  transform: translateY(-1px);
-}
-.btn--quiet:active { transform: translateY(0); }
+.btn--quiet { background: var(--paper); color: var(--jade); border-color: var(--line-strong); }
+.btn--quiet:hover { background: var(--jade-tint); color: var(--jade-deep); border-color: var(--jade); }
+
+/* På mörk lack: guldkantad, guldtext. Guld mot lack mäter 7,0:1. */
+.btn--gold { background: transparent; color: var(--goldleaf); border-color: var(--goldleaf); }
+.btn--gold:hover { background: rgba(199, 154, 46, 0.14); color: var(--ylang); border-color: var(--ylang); }
 
 .btn--ghost {
-  background: transparent;
-  color: var(--accent-ink);
-  border-color: var(--line);
-  min-height: var(--tap);
-  padding: var(--s-2) var(--s-4);
-  font-size: var(--fs--1);
+  background: transparent; color: var(--jade); border-color: var(--line-strong);
+  min-height: var(--tap); padding: var(--s-2) var(--s-4); font-size: var(--fs--1);
 }
-.btn--ghost:hover { border-color: var(--accent-warm); background: var(--accent-tint); }
+.btn--ghost:hover { background: var(--jade-tint); border-color: var(--jade); }
 
 /* ---------------------------------------------------------------------
-   Sidhuvud och meny
+   Sidhuvud — genomskinligt över hero, fast jasminvitt när man rullat
    --------------------------------------------------------------------- */
 
-/* Sidhuvudet följer med när man rullar, så att menyn och telefonnumret
-   alltid går att nå. Viktigast på mobil, där sidan är lång och vägen
-   tillbaka upp annars blir onödigt jobbig.
-
-   z-index 40 lägger det över sidans innehåll men under den fasta
-   bokningsknappen (50) och skip-länken (100).
-
-   Bakgrunden måste vara ogenomskinlig — annars syns texten som rullar
-   under igenom. */
 .site-head {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
+  position: fixed; top: 0; left: 0; right: 0; z-index: 40;
+  height: var(--head-h);
+  display: flex; align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.site-head.is-solid {
+  background: var(--jasmine);
+  border-bottom-color: var(--line);
+  box-shadow: var(--shadow-1);
 }
 
-.site-head__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-4);
-  min-height: 4.5rem;
-  flex-wrap: wrap;
-}
+.site-head__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--s-3);
-  color: var(--ink);
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-size: var(--fs-1);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+.brand { display: inline-flex; align-items: center; gap: var(--s-3); min-height: var(--tap); text-decoration: none; }
+.brand__mark { display: inline-flex; color: var(--goldleaf); }
+.brand__name {
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1);
+  letter-spacing: -0.01em; color: var(--on-lacquer);
 }
-.brand__mark {
-  color: var(--accent-warm);
-  display: inline-flex;
-  transition: transform var(--speed) var(--ease);
-}
-.brand:hover .brand__mark { transform: rotate(-8deg) scale(1.06); }
+.site-head.is-solid .brand__name { color: var(--jade); }
+.site-head.is-solid .brand__mark { color: var(--jade); }
 
-.nav__list {
-  display: flex;
-  align-items: center;
-  gap: clamp(var(--s-4), 2.5vw, var(--s-6));
-}
-
+.nav__list { display: flex; align-items: center; gap: var(--s-3); }
+/* min-height ger menylänkarna en träffyta på 44 px trots att texten bara
+   är 18 px hög. Länkar inne i löpande text är undantagna i WCAG 2.2, men
+   menyval är det inte. */
 .nav a {
-  position: relative;
-  color: var(--ink);
-  text-decoration: none;
-  font-size: var(--fs-0);
-  padding-block: var(--s-2);
-  transition: color var(--speed) var(--ease);
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: var(--tap); min-width: var(--tap); padding-inline: var(--s-2);
+  color: var(--on-lacquer); text-decoration: none;
+  font-size: var(--fs--1); font-weight: 600;
 }
-
-/* Understrykning som växer fram — ren dekor, ingen information i den */
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0.15rem;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--accent-warm);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--speed) var(--ease);
-}
-.nav a:hover { color: var(--accent-ink); }
-.nav a:hover::after { transform: scaleX(1); }
-.nav__cta a { color: var(--accent-ink); }
-.nav__cta a::after { display: none; }
+.nav a:hover { color: var(--ylang); }
+.site-head.is-solid .nav a { color: var(--ink); }
+.site-head.is-solid .nav a:hover { color: var(--jade); }
+.nav__cta .btn { color: var(--goldleaf); border-color: var(--goldleaf); }
+.site-head.is-solid .nav__cta .btn { color: var(--jade); border-color: var(--line-strong); }
 
 .nav-toggle { display: none; }
 
-/* Mobilmeny: JS lägger klassen "js" på <html>, därför göms menyn bara
-   när JavaScript fungerar. Utan JS syns alla länkar som en lista. */
-@media (max-width: 47.99em) {
-  .js .nav-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--s-2);
-    min-height: var(--tap);
-    background: var(--surface-raised);
-    border: 1px solid var(--line);
-    border-radius: var(--r-full);
-    padding: var(--s-2) var(--s-4);
-    font: inherit;
-    font-size: var(--fs--1);
-    font-weight: 600;
-    color: var(--ink);
-    cursor: pointer;
-    transition: border-color var(--speed) var(--ease),
-                background-color var(--speed) var(--ease);
-  }
-  .js .nav-toggle:hover { border-color: var(--accent-warm); }
-  .nav-toggle__bars { display: inline-grid; gap: 3px; width: 16px; }
-  .nav-toggle__bars span { height: 2px; background: currentColor; border-radius: 2px; }
-
-  .js .nav { display: none; flex-basis: 100%; }
-  .js .nav[data-open="true"] { display: block; }
-
-  .nav__list {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding-bottom: var(--s-3);
-  }
-  .nav__list > li + li { border-top: 1px solid var(--line); }
-  .nav a { display: flex; align-items: center; min-height: var(--tap); }
-  .nav a::after { display: none; }
-  .nav__cta { padding-top: var(--s-3); border-top: 0 !important; }
-  .nav__cta a { display: inline-flex; }
-}
-
 /* ---------------------------------------------------------------------
-   Hero
+   Hero — sidans enda djärva yta
    --------------------------------------------------------------------- */
 
 .hero {
-  padding-block: clamp(var(--s-8), 12vw, 8rem) clamp(var(--s-7), 9vw, var(--s-9));
   position: relative;
+  background: var(--lacquer);
+  color: var(--on-lacquer);
+  padding-top: calc(var(--head-h) + clamp(3rem, 9vw, 6rem));
+  padding-bottom: clamp(3rem, 8vw, 5.5rem);
   overflow: hidden;
 }
 
-/* Mjuk ljusfläck bakom rubriken. Ren dekor. */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -30% 45% auto auto;
-  width: min(52rem, 90vw);
-  aspect-ratio: 1;
-  background: radial-gradient(circle, var(--accent-glow), transparent 62%);
-  pointer-events: none;
-  z-index: 0;
+/* Fotot av fasaden ligger som bakgrund. Gradienten måste vara mörk nog
+   att brödtexten klarar kontrastkravet ovanpå bilden — kontrollmätt i
+   webbläsare, inte uppskattad. */
+.hero__media { position: absolute; inset: 0; z-index: 0; }
+.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+.hero__media::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(100deg, rgba(28,20,9,0.97) 0%, rgba(28,20,9,0.93) 42%,
+                            rgba(28,20,9,0.72) 72%, rgba(28,20,9,0.55) 100%),
+    linear-gradient(to bottom, rgba(28,20,9,0.55), rgba(28,20,9,0.30));
 }
 
 .hero__inner { position: relative; z-index: 1; }
+.hero__title { color: var(--on-lacquer); margin-bottom: var(--s-5); max-width: 15ch; }
+.hero__lead { font-size: var(--fs-1); color: var(--on-lacq-muted); max-width: 46ch; margin-bottom: var(--s-6); }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-5); }
+.hero__meta { font-size: var(--fs--1); color: var(--on-lacq-muted); margin: 0; }
 
-.hero__title {
-  font-size: clamp(var(--fs-4), 10vw, var(--fs-6));
-  margin-bottom: var(--s-5);
-  /* Smal spalt så rubriken bryts i två rader — utan <br>, så att
-     skärmläsare läser rubriken som sammanhängande text. */
-  max-width: 9em;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-3);
-  margin-top: var(--s-7);
-  margin-bottom: var(--s-4);
-}
-
-.hero__meta { font-size: var(--fs--1); color: var(--muted); }
+.hero .kanok { position: absolute; left: 0; right: 0; z-index: 1; }
+.hero .kanok--top { top: var(--head-h); }
+.hero .kanok--bottom { bottom: 0; }
 
 /* ---------------------------------------------------------------------
    Sektioner
    --------------------------------------------------------------------- */
 
 .section { padding-block: var(--section-y); }
+.section--alt { background: var(--jasmine-2); }
 
-.section--alt {
-  background: var(--surface-alt);
-  border-block: 1px solid var(--line);
+.band--lacquer {
+  position: relative;
+  background: var(--lacquer);
+  color: var(--on-lacquer);
 }
+.band--lacquer h2, .band--lacquer h3 { color: var(--ylang); }
+.band--lacquer p { color: var(--on-lacq-muted); }
+.band--lacquer .kanok { position: absolute; left: 0; right: 0; }
+.band--lacquer .kanok--top { top: 0; }
+.band--lacquer .kanok--bottom { bottom: 0; }
 
-.section__title {
-  font-size: clamp(var(--fs-2), 4.5vw, var(--fs-4));
-  margin-bottom: var(--s-3);
-}
+.section__title { position: relative; }
+.section__intro { color: var(--ink-muted); max-width: 46em; margin-bottom: var(--s-7); }
+.band--lacquer .section__intro { color: var(--on-lacq-muted); }
 
-/* Kort accentstreck ovanför varje sektionsrubrik */
-.section__title::before {
-  content: "";
-  display: block;
-  width: 2.5rem;
-  height: 3px;
-  background: var(--accent-warm);
-  border-radius: 2px;
-  margin-bottom: var(--s-5);
-}
+/* ---------------------------------------------------------------------
+   Om Cananga — blomman som verksamheten är uppkallad efter
+   --------------------------------------------------------------------- */
 
-.section__intro {
-  color: var(--muted);
-  max-width: 38em;
-  margin-bottom: var(--s-7);
-}
+/* overflow: hidden krävs — vattenstämpeln är medvetet placerad delvis
+   utanför textspalten, och utan detta ger den vågrät rullning på sidan. */
+.about { position: relative; overflow: hidden; }
+.about__grid { display: grid; gap: var(--s-7); }
 
-/* Mjuk intoning när sektionen rullas in i bild.
-   Klassen sätts av js/main.js — aldrig på bokningen eller 360-vyn,
-   eftersom en animerad förälder kan störa inbäddat innehåll. */
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+/* Ylang-ylang-blomman som stor, mjuk vattenstämpel. Sidans ENDA
+   vattenstämpel — den tappar sin verkan om den upprepas. */
+.about__mark {
+  position: absolute; right: -6%; top: 50%; translate: 0 -50%;
+  width: min(46vw, 30rem); color: var(--goldleaf);
+  opacity: 0.10; pointer-events: none; z-index: 0;
 }
-.reveal.is-visible { opacity: 1; transform: none; }
+.about__text { position: relative; z-index: 1; }
+.about__lead { font-size: var(--fs-1); color: var(--ink); }
+
+/* Ruta för certifiering. Ligger dold tills den fylls i — se HTML-filen. */
+.credential {
+  border: 1px solid var(--line-strong); border-radius: var(--r-md);
+  padding: var(--s-5); background: var(--paper); margin-top: var(--s-6);
+}
+.credential h3 { margin-bottom: var(--s-2); }
 
 /* ---------------------------------------------------------------------
    Behandlingar
    --------------------------------------------------------------------- */
 
-.ticks { display: grid; gap: var(--s-3); margin-bottom: var(--s-5); }
-
-.ticks li {
-  position: relative;
-  padding-left: var(--s-6);
-  max-width: var(--measure);
-}
-
-.ticks li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.62em;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--accent-warm);
-}
-
-.treatments { display: grid; gap: var(--s-4); }
+.treatments { display: grid; gap: var(--s-5); }
 
 .treatment {
-  background: var(--surface-raised);
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
-  padding: clamp(var(--s-5), 4vw, var(--s-7));
+  overflow: hidden;
   box-shadow: var(--shadow-1);
-  transition: box-shadow var(--speed) var(--ease),
-              border-color var(--speed) var(--ease),
-              transform var(--speed) var(--ease);
-}
-.treatment:hover {
-  box-shadow: var(--shadow-2);
-  border-color: var(--accent-pale);
-  transform: translateY(-2px);
 }
 
-.treatment__name {
-  font-size: clamp(var(--fs-1), 3vw, var(--fs-2));
-  margin: 0 0 var(--s-3);
+/* Kortets övre panel. Thaimassagen får den mörka lackpanelen och leder
+   därmed visuellt; oljemassagen får den ljusare jadepanelen. */
+.treatment__panel {
+  position: relative;
+  min-height: 8.5rem;
+  display: flex; align-items: flex-end;
+  padding: var(--s-5);
+  background: var(--lacquer-2);
 }
-
-.treatment__desc {
-  color: var(--muted);
-  margin: 0 0 var(--s-5);
+.treatment--lead .treatment__panel { background: var(--lacquer); }
+.treatment--second .treatment__panel { background: var(--jade); }
+.treatment__panel .kanok { position: absolute; left: 0; right: 0; bottom: 0; }
+.treatment__mark {
+  position: absolute; right: var(--s-5); top: var(--s-4);
+  width: 4.5rem; color: var(--goldleaf); opacity: 0.55;
 }
+.treatment__name { position: relative; color: var(--ylang); margin: 0; }
+/* På den gröna panelen läser jasmine bättre än ylang: 8,5:1 mot 4,7:1. */
+.treatment--second .treatment__name { color: var(--jasmine); }
 
-/* De två längderna inuti ett behandlingskort.
-   max-width: none behövs för att p-taggen annars ärver --measure. */
+.treatment__body { padding: var(--s-5) clamp(var(--s-5), 4vw, var(--s-6)) var(--s-6); }
+.treatment__desc { color: var(--ink-muted); margin: 0 0 var(--s-5); }
+
 .options { display: grid; }
-
-.option {
-  padding: var(--s-4) 0;
-  border-top: 1px solid var(--line);
-}
-
+.option { padding: var(--s-4) 0; border-top: 1px solid var(--line); }
 .option__head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--s-2) var(--s-4);
-  margin: 0 0 var(--s-1);
-  max-width: none;
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: var(--s-2) var(--s-4); margin: 0 0 var(--s-1); max-width: none;
 }
-
 .option__time { font-weight: 600; color: var(--ink); }
+.option__price { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1); color: var(--jade); white-space: nowrap; }
+.option__desc { margin: 0; max-width: none; color: var(--ink-muted); font-size: var(--fs--1); }
 
-.option__price {
-  font-family: var(--font-display);
-  font-size: var(--fs-1);
-  font-weight: 700;
-  color: var(--accent-ink);
-  white-space: nowrap;
+/* ---------------------------------------------------------------------
+   Så går det till — tre steg, därför är numreringen befogad
+   --------------------------------------------------------------------- */
+
+.steps { display: grid; gap: var(--s-6); counter-reset: steg; }
+.step { position: relative; padding-left: 3.5rem; }
+.step::before {
+  counter-increment: steg; content: counter(steg);
+  position: absolute; left: 0; top: -0.15em;
+  width: 2.5rem; height: 2.5rem;
+  display: grid; place-items: center;
+  border: 1px solid var(--goldleaf); border-radius: 50%;
+  font-family: var(--font-display); font-weight: 500; font-size: var(--fs-1);
+  color: var(--goldleaf);
 }
+.step h3 { color: var(--ylang); margin-bottom: var(--s-2); }
+.step p { margin: 0; }
 
-.option__desc {
-  margin: 0;
-  max-width: none;
-  color: var(--muted);
-  font-size: var(--fs--1);
-}
+/* ---------------------------------------------------------------------
+   Vanliga frågor
+   --------------------------------------------------------------------- */
 
+.faq { display: grid; gap: 0; max-width: var(--measure); }
+.faq__item { border-top: 1px solid var(--line); padding: var(--s-5) 0; }
+.faq__item:last-child { border-bottom: 1px solid var(--line); }
+.faq__q { margin: 0 0 var(--s-2); color: var(--jade); }
+.faq__a { margin: 0; color: var(--ink-muted); }
 
 /* ---------------------------------------------------------------------
    Bokning
@@ -600,200 +517,123 @@ code {
    i. Rör den inte — den ska kunna växa fritt på höjden.
    --------------------------------------------------------------------- */
 
-.booking {
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  background: var(--surface-raised);
-  box-shadow: var(--shadow-2);
-  /* Medvetet INGEN overflow här: kalendern ligger i en iframe och en
-     klippande förälder kan störa dess positionering. */
-}
+.booking { margin-bottom: var(--s-5); }
 
 .booking__gate {
-  padding: clamp(var(--s-7), 8vw, var(--s-9)) clamp(var(--s-5), 5vw, var(--s-7));
-  text-align: center;
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  background: var(--paper); padding: clamp(var(--s-6), 5vw, var(--s-8));
+  text-align: center; box-shadow: var(--shadow-1);
 }
+.booking__gate-text { color: var(--ink-muted); margin: 0 auto var(--s-5); max-width: 34em; }
+.booking__choices { display: flex; flex-wrap: wrap; gap: var(--s-3); justify-content: center; }
 
-.booking__gate-text {
-  color: var(--muted);
-  font-size: var(--fs--1);
-  max-width: 30em;
-  margin-inline: auto;
-  margin-bottom: var(--s-6);
-}
-
-.booking__choices {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-3);
-  justify-content: center;
-}
-
-.booking__tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-2);
-  padding: var(--s-3) clamp(var(--s-4), 4vw, var(--s-5));
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: var(--r-lg) var(--r-lg) 0 0;
-}
-
+.booking__tabs { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-bottom: var(--s-5); }
 .booking__tab {
-  font: inherit;
-  font-size: var(--fs--1);
-  font-weight: 600;
-  min-height: var(--tap);
-  padding: var(--s-2) var(--s-4);
-  border: 1px solid var(--line);
-  border-radius: var(--r-full);
-  background: var(--surface-raised);
-  color: var(--accent-ink);
-  cursor: pointer;
-  transition: background-color var(--speed) var(--ease),
-              border-color var(--speed) var(--ease),
-              color var(--speed) var(--ease);
+  font: inherit; font-size: var(--fs--1); font-weight: 600; cursor: pointer;
+  padding: var(--s-2) var(--s-5); min-height: var(--tap);
+  border: 1px solid var(--line-strong); border-radius: var(--r-full);
+  background: var(--paper); color: var(--jade);
+  transition: background-color var(--speed) var(--ease), color var(--speed) var(--ease);
 }
-.booking__tab:hover { border-color: var(--accent-warm); background: var(--accent-tint); }
-.booking__tab[aria-pressed="true"] {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #FFFFFF;
-}
+.booking__tab[aria-pressed="true"] { background: var(--jade); color: #FFFFFF; border-color: var(--jade); }
 
-/* Behållaren för Cal.com-kalendern. Oförändrad med flit. */
-.booking__mount {
-  min-height: 34rem;
-  width: 100%;
-  overflow: auto;
-}
+.booking__mount { border-radius: var(--r-lg); overflow: hidden; }
 
-.booking__setup,
-.booking__error {
-  padding: clamp(var(--s-5), 5vw, var(--s-7));
-  background: var(--accent-tint);
-  border-top: 3px solid var(--accent-warm);
-  border-radius: 0 0 var(--r-lg) var(--r-lg);
-  color: var(--ink);
-  font-size: var(--fs-0);
+.booking__setup, .booking__error {
+  border: 1px solid var(--line-strong); border-radius: var(--r-md);
+  background: var(--jasmine-2); padding: var(--s-5);
 }
-
-/* Telefonnumret under kalendern — syns alltid, oavsett vad som händer
-   med bokningssystemet. Göm det aldrig. */
-.booking__fallback {
-  margin-top: var(--s-5);
-  color: var(--muted);
-  max-width: none;
-}
-.booking__fallback a { font-weight: 600; white-space: nowrap; }
+.booking__fallback { color: var(--ink-muted); }
 
 /* ---------------------------------------------------------------------
-   Öppettider
+   Öppettider och kontakt
    --------------------------------------------------------------------- */
 
-.hours {
-  margin: 0;
-  max-width: 30rem;
-  border-top: 1px solid var(--line);
-}
-
+.hours { margin: 0; }
 .hours__row {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--s-5);
-  padding: var(--s-3) var(--s-1);
-  border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; gap: var(--s-5);
+  padding: var(--s-3) 0; border-bottom: 1px solid var(--line);
 }
+.hours__row dt { font-weight: 600; }
+.hours__row dd { margin: 0; color: var(--ink-muted); }
 
-.hours dt { color: var(--ink); }
-.hours dd { margin: 0; color: var(--muted); font-variant-numeric: tabular-nums; }
+.contact { display: grid; gap: var(--s-7); }
+.contact__address { font-style: normal; margin-bottom: var(--s-5); line-height: var(--lh-body); }
+.contact__phone { font-family: var(--font-display); font-size: var(--fs-2); font-weight: 500; margin-bottom: var(--s-2); }
+.contact__phone a { text-decoration: none; }
+
+.portrait { border-radius: var(--r-md); border: 1px solid var(--line); margin-bottom: var(--s-4); }
+
+.photo { margin: var(--s-7) 0 0; }
+.photo img { border-radius: var(--r-lg); width: 100%; }
+.photo figcaption { font-size: var(--fs--1); color: var(--ink-muted); margin-top: var(--s-3); }
 
 /* ---------------------------------------------------------------------
-   Hitta hit och kontakt
+   360-vy
    --------------------------------------------------------------------- */
 
-.contact { display: grid; gap: clamp(var(--s-7), 7vw, var(--s-8)); }
-
-.contact__address {
-  font-style: normal;
-  font-size: var(--fs-1);
-  line-height: 1.8;
-  margin-bottom: var(--s-5);
-}
-
-/* Litet porträtt. Originalbilden är liten, därför visas den i litet
-   format — annars blir den suddig. */
-.portrait {
-  display: block;
-  width: 118px;
-  height: auto;
-  aspect-ratio: 141 / 235;
-  object-fit: cover;
-  border-radius: var(--r-md);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-1);
-  margin-bottom: var(--s-5);
-}
-
-.contact__phone {
-  font-family: var(--font-display);
-  font-size: clamp(var(--fs-2), 4.5vw, var(--fs-3));
-  margin-bottom: var(--s-3);
-}
-.contact__phone a { text-decoration: none; }
-.contact__phone a:hover { text-decoration: underline; }
-
-.photo { margin: clamp(var(--s-7), 7vw, var(--s-8)) 0 0; }
-
-.photo img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: var(--r-lg);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-2);
-}
-
-.photo figcaption {
-  margin-top: var(--s-3);
-  font-size: var(--fs--1);
-  color: var(--muted);
-}
-
-/* 360-vy från Google Street View */
-.streetview { margin-top: clamp(var(--s-7), 7vw, var(--s-8)); }
-
-.streetview__title {
-  font-size: clamp(var(--fs-1), 2.5vw, var(--fs-2));
-  margin-bottom: var(--s-4);
-}
-
+.streetview { margin-top: var(--s-8); }
+.streetview__title { margin-bottom: var(--s-4); }
 .streetview__gate {
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  background: var(--surface-alt);
-  box-shadow: var(--shadow-1);
-  padding: clamp(var(--s-6), 6vw, var(--s-7)) clamp(var(--s-5), 5vw, var(--s-7));
-  text-align: center;
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  background: var(--jasmine-2); padding: var(--s-6); text-align: center;
 }
-
-.streetview__text {
-  color: var(--muted);
-  font-size: var(--fs--1);
-  max-width: 30em;
-  margin-inline: auto;
-  margin-bottom: var(--s-5);
-}
-
+.streetview__text { color: var(--ink-muted); margin: 0 auto var(--s-4); max-width: 34em; }
 .streetview__frame iframe {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-2);
+  width: 100%; height: clamp(18rem, 45vw, 26rem);
+  border: 0; border-radius: var(--r-lg); display: block;
+}
+
+/* ---------------------------------------------------------------------
+   Textsidor — integritetspolicyn och 404
+
+   De delar stilmall med startsidan men har ingen hero, så sidhuvudet är
+   jasminvitt från början (klassen sätts av js/main.js).
+   --------------------------------------------------------------------- */
+
+.page { padding-block: var(--section-y); }
+
+.prose { max-width: var(--measure); }
+.prose h1 { margin-bottom: var(--s-5); }
+.prose h2 {
+  font-size: var(--fs-2); margin-top: var(--s-8); margin-bottom: var(--s-4);
+  padding-top: var(--s-5); border-top: 1px solid var(--line);
+}
+.prose h3 { font-size: var(--fs-1); margin-top: var(--s-6); margin-bottom: var(--s-3); }
+.prose ul { margin: 0 0 var(--s-4); padding-left: var(--s-5); list-style: disc; }
+.prose ul li { margin-bottom: var(--s-2); }
+.prose__updated { color: var(--ink-muted); font-size: var(--fs--1); }
+
+/* Gul ruta med det som måste fyllas i innan sidan visas för kunder.
+   Den ska sticka ut — den är en påminnelse, inte innehåll. Tas bort när
+   organisationsnummer och e-postadress är ifyllda. */
+.prose__note {
+  background: #FFF6DA;
+  /* Guld mäter bara 2,4:1 mot den gula botten. Den här mörkare tonen
+     ger 4,7:1 och klarar därmed kravet på 3:1 för grafik med marginal. */
+  border: 1px solid #8A6A15;
+  border-left-width: 5px;
+  border-radius: var(--r-md);
+  padding: var(--s-5);
+  margin-bottom: var(--s-6);
+  color: var(--ink);
+}
+.prose__note :last-child { margin-bottom: 0; }
+
+/* Mittställd text på 404-sidan */
+.lead { font-size: var(--fs-1); color: var(--ink-muted); }
+
+/* 404-sidan */
+.notfound { padding-block: var(--section-y); text-align: center; }
+.notfound__code {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: clamp(var(--fs-4), 12vw, 6rem); line-height: 1;
+  color: var(--goldleaf); margin: 0 0 var(--s-4);
+}
+.notfound .lead { margin-inline: auto; }
+.notfound__actions {
+  display: flex; flex-wrap: wrap; gap: var(--s-3);
+  justify-content: center; margin-top: var(--s-6);
 }
 
 /* ---------------------------------------------------------------------
@@ -801,145 +641,55 @@ code {
    --------------------------------------------------------------------- */
 
 .site-foot {
-  background: var(--ink);
-  color: #E9E4DA;                 /* 11,3:1 mot --ink */
+  position: relative;
+  background: var(--lacquer); color: var(--on-lacq-muted);
   padding-block: clamp(var(--s-7), 7vw, var(--s-8));
 }
-
-.site-foot a { color: var(--accent-soft); }
-.site-foot a:hover { color: #F2C4AE; }
-
-.site-foot__inner { display: grid; gap: var(--s-5); }
-
+.site-foot .kanok { position: absolute; top: 0; left: 0; right: 0; }
+.site-foot__inner { display: grid; gap: var(--s-6); }
 .site-foot__brand {
-  font-family: var(--font-display);
-  font-size: var(--fs-1);
-  color: var(--surface);
-  margin: 0;
+  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1);
+  color: var(--goldleaf); margin-bottom: var(--s-2);
 }
-
-.site-foot__copy {
-  font-size: var(--fs--1);
-  color: #A79C92;                 /* 5,4:1 mot --ink */
-  margin: 0;
-}
+.site-foot a { color: var(--ylang); }
+.site-foot a:hover { color: var(--marigold); }
+.site-foot__copy { font-size: var(--fs--1); }
 
 /* ---------------------------------------------------------------------
-   Fast bokningsknapp längst ner på mobil
+   Fast bokningsknapp i underkant på mobil
    --------------------------------------------------------------------- */
 
 .mobile-cta {
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  z-index: 50;
-  display: flex;
-  gap: var(--s-3);
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+  display: flex; gap: var(--s-3);
   padding: var(--s-3) var(--gutter);
   padding-bottom: calc(var(--s-3) + env(safe-area-inset-bottom, 0px));
-  background: rgba(253, 249, 244, 0.94);
+  background: rgba(251, 247, 238, 0.96);
   backdrop-filter: blur(8px);
   border-top: 1px solid var(--line);
-  box-shadow: 0 -6px 20px rgba(33, 28, 24, 0.06);
 }
 .mobile-cta .btn { flex: 1; }
 .mobile-cta .btn--quiet { flex: 0 0 auto; }
-
-body.has-mobile-cta { padding-bottom: 5.5rem; }
-
-@media (min-width: 48em) {
-  .mobile-cta { display: none !important; }
-  body.has-mobile-cta { padding-bottom: 0; }
-}
+body.has-mobile-cta { padding-bottom: 5rem; }
 
 /* ---------------------------------------------------------------------
-   Innehållssidor (integritetspolicy och 404)
+   Intoning när en sektion rullas in i bild.
+   Klassen sätts av js/main.js. Endast opacitet — ingen förflyttning.
    --------------------------------------------------------------------- */
 
-.page { padding-block: clamp(var(--s-7), 8vw, var(--s-9)); }
-
-.prose { max-width: 42rem; }
-
-.prose h1 { font-size: clamp(var(--fs-3), 6vw, var(--fs-5)); margin-bottom: var(--s-5); }
-
-.prose h2 {
-  font-size: clamp(var(--fs-1), 3vw, var(--fs-2));
-  margin-top: var(--s-7);
-  margin-bottom: var(--s-3);
-}
-
-.prose h3 {
-  font-family: var(--font-body);
-  font-size: var(--fs-0);
-  font-weight: 700;
-  margin-top: var(--s-6);
-  margin-bottom: var(--s-2);
-}
-
-.prose ul {
-  list-style: disc;
-  padding-left: var(--s-5);
-  margin-bottom: var(--s-4);
-  max-width: var(--measure);
-  color: var(--muted);
-}
-.prose li { margin-bottom: var(--s-2); }
-
-.prose p { color: var(--muted); }
-.prose strong { color: var(--ink); }
-
-.prose__updated {
-  font-size: var(--fs--1);
-  color: var(--muted);
-  border-left: 3px solid var(--accent-warm);
-  padding-left: var(--s-4);
-  margin-bottom: var(--s-7);
-}
-
-.prose__note {
-  background: var(--surface-alt);
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-1);
-  padding: var(--s-5);
-  font-size: var(--fs-0);
-  margin-block: var(--s-6);
-}
-
-.notfound { text-align: center; padding-block: clamp(var(--s-8), 15vw, 9rem); }
-
-.notfound__code {
-  font-family: var(--font-display);
-  font-size: clamp(var(--fs-5), 18vw, 8rem);
-  color: var(--accent-warm);
-  line-height: 1;
-  margin: 0 0 var(--s-3);
-  max-width: none;
-}
-
-.notfound .lead { margin-inline: auto; }
-
-.notfound__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-3);
-  justify-content: center;
-  margin-top: var(--s-7);
-  max-width: none;
-}
+.reveal { opacity: 0; transition: opacity 0.45s var(--ease); }
+.reveal.is-visible { opacity: 1; }
 
 /* ---------------------------------------------------------------------
    Större skärmar
    --------------------------------------------------------------------- */
 
 @media (min-width: 48em) {
-  .treatments { grid-template-columns: 1fr 1fr; gap: var(--s-5); }
+  .treatments { grid-template-columns: 1fr 1fr; }
   .contact { grid-template-columns: 1fr 1fr; align-items: start; }
-  .site-foot__inner {
-    grid-template-columns: repeat(2, auto);
-    justify-content: space-between;
-    align-items: start;
-    gap: var(--s-6) var(--s-8);
-  }
+  .about__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); align-items: center; }
+  .steps { grid-template-columns: repeat(3, 1fr); gap: var(--s-7); }
+  .site-foot__inner { grid-template-columns: repeat(2, auto); justify-content: space-between; gap: var(--s-6) var(--s-8); }
 }
 
 @media (min-width: 64em) {
@@ -947,23 +697,63 @@ body.has-mobile-cta { padding-bottom: 5.5rem; }
 }
 
 /* ---------------------------------------------------------------------
-   Respektera systeminställningen för minskad rörelse
+   Mobil — menyn fälls ihop bakom en knapp
+   --------------------------------------------------------------------- */
+
+@media (max-width: 47.99em) {
+  .nav-toggle {
+    display: inline-flex; align-items: center; gap: var(--s-2);
+    min-height: var(--tap); padding: var(--s-2) var(--s-4);
+    background: transparent; border: 1px solid var(--goldleaf);
+    border-radius: var(--r-full); color: var(--goldleaf);
+    font: inherit; font-size: var(--fs--1); font-weight: 600; cursor: pointer;
+  }
+  .site-head.is-solid .nav-toggle { border-color: var(--line-strong); color: var(--jade); }
+
+  .nav-toggle__bars { display: inline-grid; gap: 3px; width: 1rem; }
+  .nav-toggle__bars span { display: block; height: 2px; background: currentColor; border-radius: 2px; }
+
+  .js .nav { display: none; }
+  .js .nav[data-open="true"] {
+    display: block;
+    position: absolute; top: var(--head-h); left: 0; right: 0;
+    background: var(--jasmine); border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-2);
+    padding: var(--s-4) var(--gutter) var(--s-5);
+  }
+  .js .nav[data-open="true"] .nav__list { flex-direction: column; align-items: stretch; gap: 0; }
+  .js .nav[data-open="true"] a { color: var(--ink); display: block; padding: var(--s-3) 0; }
+  .js .nav[data-open="true"] .nav__cta { margin-top: var(--s-3); }
+  .js .nav[data-open="true"] .nav__cta .btn { color: var(--jade); border-color: var(--line-strong); }
+
+  .about__mark { display: none; }
+  .hero__media img { object-position: 62% 45%; }
+
+  /* På smal skärm ligger texten över hela bilden i stället för bara över
+     den mörka vänsterkanten, så gradienten måste vara kraftigare här.
+     Uppmätt mot ljusaste pixeln bakom ingressen: 5,5:1 med den vågräta
+     gradienten, 7,4:1 med den här. Kravet är 4,5:1 — marginalen finns
+     för att bilden ska kunna bytas mot en ljusare utan att texten fallerar. */
+  .hero__media::after {
+    background:
+      linear-gradient(180deg, rgba(28,20,9,0.93) 0%, rgba(28,20,9,0.88) 60%, rgba(28,20,9,0.82) 100%),
+      linear-gradient(to bottom, rgba(28,20,9,0.45), rgba(28,20,9,0.45));
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Mindre rörelse — respekterar systeminställningen
    --------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  /* Inget ska tonas in eller flyttas */
-  .reveal { opacity: 1; transform: none; }
-  .btn:hover, .treatment:hover { transform: none; }
-  .brand:hover .brand__mark { transform: none; }
-  .nav a::after { transition: none; }
+  .js .kanok--draw { animation: none; }
+  .reveal { opacity: 1; }
 }
 
 /* ---------------------------------------------------------------------
@@ -971,8 +761,9 @@ body.has-mobile-cta { padding-bottom: 5.5rem; }
    --------------------------------------------------------------------- */
 
 @media print {
-  .site-head, .mobile-cta, .booking, .skip, .streetview { display: none !important; }
-  body { background: #FFFFFF; color: #000000; font-size: 11pt; }
-  .section--alt { background: none; }
-  .treatment, .photo img { box-shadow: none; }
+  .site-head, .mobile-cta, .booking, .skip, .streetview, .kanok { display: none !important; }
+  body { background: #FFFFFF; color: #000000; }
+  .band--lacquer, .site-foot, .hero { background: #FFFFFF !important; color: #000000 !important; }
+  .hero__media { display: none; }
+  .hero__title, .band--lacquer h2, .band--lacquer h3, .site-foot__brand { color: #000000 !important; }
 }

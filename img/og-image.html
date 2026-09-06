@@ -12,7 +12,7 @@
 
   GÖRA OM BILDEN:
   Öppna filen i webbläsaren, sätt fönstret till exakt 1200 x 630 pixlar
-  och ta en skärmbild. Spara som img/og-image-v2.png och skriv över den
+  och ta en skärmbild. Spara som img/og-image-v3.jpg och skriv över den
   gamla. Byter du filnamn måste og:image ändras i index.html och
   integritetspolicy.html, samt "image" i den strukturerade datan.
 
@@ -21,53 +21,74 @@
 -->
 <style>
   :root {
-    --surface: #FDF9F4;
-    --surface-alt: #F5F1E6;
-    --ink: #14301C;
-    --accent: #2A5A34;
-    --accent-warm: #3D7A4A;
-    --muted: #4A5B4E;
-    --line: #D3E2D6;
-    --font-display: "Avenir Next", Avenir, "Century Gothic", Futura,
-                    "Segoe UI", system-ui, -apple-system, sans-serif;
+    --lacquer: #1C1409;
+    --jade: #12514A;
+    --goldleaf: #C79A2E;
+    --ylang: #E3B505;
+    --jasmine: #FBF7EE;
+    --on-lacq-muted: #CFC2AC;
+    --font-display: 'Kanit', 'Segoe UI', system-ui, sans-serif;
+    --font-body: 'Sarabun', 'Segoe UI', system-ui, sans-serif;
   }
+  @font-face { font-family:'Kanit'; font-weight:600; src:url('../fonts/kanit-600-latin.woff2') format('woff2'); }
+  @font-face { font-family:'Sarabun'; font-weight:400; src:url('../fonts/sarabun-400-latin.woff2') format('woff2'); }
+  @font-face { font-family:'Sarabun'; font-weight:600; src:url('../fonts/sarabun-600-latin.woff2') format('woff2'); }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    width: 1200px; height: 630px;
+    width: 1200px; height: 630px; position: relative;
     display: flex; align-items: center;
-    font-family: var(--font-display);
-    background: var(--surface);
-    background-image:
-      radial-gradient(circle at 78% 22%, rgba(42,90,52,0.10), transparent 58%),
-      linear-gradient(160deg, var(--surface) 0%, var(--surface-alt) 100%);
+    font-family: var(--font-body);
+    background: var(--lacquer);
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
   }
-  .bar { width: 14px; align-self: stretch; background: var(--accent); flex: 0 0 auto; }
-  .inner { padding: 0 88px; }
+  .bloom {
+    position: absolute; right: -70px; top: 50%; translate: 0 -50%;
+    width: 560px; color: var(--goldleaf); opacity: 0.16;
+  }
+  .kanok {
+    position: absolute; left: 0; right: 0; height: 14px;
+    background-repeat: repeat-x; background-size: 48px 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cg fill='none' stroke='%23C79A2E' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M0 12.5h48'/%3E%3Cpath d='M4 12.5c4.5 0 6.5-3 7.5-6.2C12.2 4 14 3 15.2 4.4c1.2 1.4 0 3.6-2 4.1'/%3E%3Cpath d='M28 12.5c4.5 0 6.5-3 7.5-6.2C36.2 4 38 3 39.2 4.4c1.2 1.4 0 3.6-2 4.1'/%3E%3Cpath d='M20 12.5c1.8 0 2.8-1.3 3.2-2.7'/%3E%3Cpath d='M44 12.5c1.8 0 2.8-1.3 3.2-2.7'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  .kanok--top { top: 34px; }
+  .kanok--bottom { bottom: 34px; transform: scaleY(-1); }
+  .inner { position: relative; padding: 0 92px; z-index: 1; }
   .eyebrow {
-    font-size: 22px; font-weight: 700; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--accent); margin-bottom: 26px;
+    font-size: 21px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--goldleaf); margin-bottom: 24px;
   }
   h1 {
-    font-size: 92px; font-weight: 700; line-height: 1.04;
-    letter-spacing: -0.022em; color: var(--ink); margin-bottom: 30px;
+    font-family: var(--font-display); font-size: 88px; font-weight: 600;
+    line-height: 1.06; letter-spacing: -0.02em;
+    color: var(--jasmine); margin-bottom: 28px;
   }
-  .meta { font-size: 27px; color: var(--muted); margin-bottom: 40px; }
-  .pills { display: flex; gap: 16px; margin-bottom: 60px; }
+  .meta { font-size: 26px; color: var(--on-lacq-muted); margin-bottom: 38px; }
+  .pills { display: flex; gap: 14px; margin-bottom: 54px; }
   .pill {
-    font-size: 23px; font-weight: 600; color: var(--accent);
-    background: #FFFFFF; border: 1px solid var(--line);
-    border-radius: 999px; padding: 14px 28px;
+    font-size: 22px; font-weight: 600; color: var(--ylang);
+    border: 1px solid var(--goldleaf); border-radius: 999px; padding: 13px 26px;
   }
   .brand {
     display: flex; align-items: center; gap: 14px;
-    font-size: 27px; font-weight: 700; color: var(--ink);
+    font-family: var(--font-display); font-size: 26px; font-weight: 600;
+    color: var(--goldleaf);
   }
-  .brand svg { color: var(--accent-warm); }
 </style>
 </head>
 <body>
-  <div class="bar"></div>
+  <span class="bloom"><svg viewBox="0 0 64 64" width="100%">
+      <g fill="currentColor">
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(60 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(120 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(180 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(240 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(300 32 32)"/>
+        <circle cx="32" cy="32" r="3" opacity="0.9"/>
+      </g>
+    </svg></span>
+  <div class="kanok kanok--top"></div>
   <div class="inner">
     <p class="eyebrow">Helsingborg</p>
     <h1>Thaimassage<br>&amp; oljemassage</h1>
@@ -77,13 +98,20 @@
       <span class="pill">60 min &middot; 600 kr</span>
     </div>
     <p class="brand">
-      <svg viewBox="0 0 32 32" width="34" height="34">
-        <path d="M16 3c4.5 4 6.8 8 6.8 12a6.8 6.8 0 0 1-13.6 0c0-4 2.3-8 6.8-12z" fill="currentColor"/>
-        <path d="M16 17v12M16 22c-2.6 0-4.7-1.4-6-3.6M16 25c2.6 0 4.7-1.4 6-3.6"
-              fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <svg viewBox="0 0 64 64" width="34" height="34">
+        <g fill="currentColor">
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(60 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(120 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(180 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(240 32 32)"/>
+        <path d="M32 31.5C29.4 24 28.1 15 29.8 6.4c.4-2.3 1.4-4 2.8-4.9 1.2 2.4 1.8 5.4 1.9 9 .2 7.1-.8 14.1-2.5 21z" transform="rotate(300 32 32)"/>
+          <circle cx="32" cy="32" r="3" opacity="0.9"/>
+        </g>
       </svg>
       Cananga Wellness
     </p>
   </div>
+  <div class="kanok kanok--bottom"></div>
 </body>
 </html>
