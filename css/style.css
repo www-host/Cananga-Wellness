@@ -246,16 +246,20 @@ code {
 .band--forest::before { background: var(--silke), color-mix(in srgb, var(--forest) 87%, transparent); }
 
 /* Övergångarna */
+/* Höjden hör hemma i modifieraren, inte här. Ett band utan uttoning —
+   sidfoten — fick annars en tom absolut låda efter innehållet, utan
+   top eller bottom att haka i. Den syntes inte men förlängde dokumentet
+   med 64 px, vilket gav en vit remsa under sidfoten. */
 .band::after {
   content: ""; position: absolute; left: 0; right: 0; z-index: -1;
-  height: clamp(3rem, 8vw, 6rem); pointer-events: none;
+  height: 0; pointer-events: none;
 }
 .band--tona-topp::after {
-  top: 0;
+  top: 0; height: clamp(3rem, 8vw, 6rem);
   background: linear-gradient(to bottom, var(--paper), color-mix(in srgb, var(--paper) 0%, transparent));
 }
 .band--tona-botten::after {
-  bottom: 0;
+  bottom: 0; height: clamp(3rem, 8vw, 6rem);
   background: linear-gradient(to top, var(--paper), color-mix(in srgb, var(--paper) 0%, transparent));
 }
 /* Båda kanterna samtidigt kräver ett extra lager */
@@ -660,13 +664,19 @@ code {
    Sidfot
    --------------------------------------------------------------------- */
 
-.site-foot { padding-block: clamp(var(--s-8), 8vw, var(--s-9)); }
-.site-foot__inner { display:grid; gap: var(--s-6); position:relative; z-index:1; }
-.site-foot__brand {
-  font-family: var(--font-display); font-weight:600; font-size: var(--fs-2);
-  color: var(--on-dark); margin-bottom: var(--s-2);
+/* En rad, inte ett block. Sidfoten ska avsluta sidan, inte upprepa den. */
+.site-foot { padding-block: clamp(var(--s-5), 3.5vw, var(--s-6)); }
+.site-foot__inner {
+  position:relative; z-index:1;
+  display:flex; flex-wrap:wrap; align-items:center;
+  justify-content:space-between; gap: var(--s-2) var(--s-5);
 }
-.site-foot__copy { font-size: var(--fs--1); }
+.site-foot__brand {
+  font-family: var(--font-display); font-weight:600; font-size: var(--fs-1);
+  color: var(--on-dark); margin:0;
+}
+.site-foot__copy { font-size: var(--fs--1); margin:0; }
+.site-foot__sep { margin-inline: var(--s-2); opacity:.45; }
 
 /* ---------------------------------------------------------------------
    Fast bokningsknapp i underkant på mobil
@@ -729,10 +739,8 @@ body.has-mobile-cta { padding-bottom: 5.5rem; }
   .contact { grid-template-columns: 1fr 1fr; align-items:start; }
   .about__grid { grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); }
   .steps { grid-template-columns: repeat(3,1fr); }
-  .site-foot__inner { grid-template-columns: repeat(2,auto); justify-content:space-between; gap: var(--s-6) var(--s-8); }
 }
 @media (min-width: 64em) {
-  .site-foot__inner { grid-template-columns: repeat(4,auto); }
   /* Tre spalter först när det finns bredd för det. Vid 768 px står de
      två och två, vilket är läsbarare än tre trånga. */
   .contact { grid-template-columns: repeat(3, 1fr); }
