@@ -57,6 +57,8 @@
      Kontrollkontroll (WCAG AA: 4,5:1 brödtext, 3:1 stor text och grafik):
        --ink       på --paper ........... 13,2:1  ✓  brödtext
        --ink-soft  på --paper ............ 7,3:1  ✓  dämpad text
+       --ink       på --paper-2 ......... 12,1:1  ✓
+       --ink-soft  på --paper-2 .......... 6,7:1  ✓
        vit         på --deep ............ 14,0:1  ✓  knapp
        --paper     på --deep ............ 13,2:1  ✓  text på mörkt
        --paper     på --forest ........... 8,1:1  ✓
@@ -81,7 +83,7 @@
   --gold-soft:  #E0AE3E;   /* guld på mörkt när det ska lysa */
   --blush:      #EDB9C3;   /* ornament: kronblad, små accenter */
   --paper:      #FBF8F5;   /* sidans botten */
-  --paper-2:    #F4EEE8;   /* varannan sektion */
+  --paper-2:    #EAF0E8;   /* varannan sektion, svagt grönskiftande */
   --paper-3:    #FFFFFF;   /* kort */
   --ink:        #06322D;
   --ink-soft:   #42574F;
@@ -126,6 +128,18 @@
 
   /* Mönsterbrickan, ritad som SVG och inbakad i stilmallen. Ingen
      bildfil, ingen extra nedladdning, skarp på alla skärmar. */
+  /* SIDENVECKEN. Mjuka diagonala band av ljus och skugga som lägger sig
+     över de mörka partierna och får dem att läsa som draperat tyg i
+     stället för platt färg. Oregelbundna avstånd med flit — jämna
+     mellanrum ser ut som ränder, inte som veck. */
+  --silke:
+    linear-gradient(101deg, transparent 1%,  rgba(255,255,255,.070) 8%,  transparent 16%),
+    linear-gradient(101deg, transparent 17%, rgba(0,0,0,.22)        26%, transparent 35%),
+    linear-gradient(101deg, transparent 37%, rgba(255,255,255,.048) 45%, transparent 53%),
+    linear-gradient(101deg, transparent 55%, rgba(0,0,0,.17)        64%, transparent 74%),
+    linear-gradient(101deg, transparent 76%, rgba(255,255,255,.055) 84%, transparent 92%),
+    linear-gradient(101deg, transparent 93%, rgba(0,0,0,.13)        99%, transparent 100%);
+
   --monster: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PGRlZnM+PGcgaWQ9ImIiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFCOUE4MSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHZlY3Rvci1lZmZlY3Q9Im5vbi1zY2FsaW5nLXN0cm9rZSI+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDAgNTAgNTApIHRyYW5zbGF0ZSgwIDApIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMS4wKSB0cmFuc2xhdGUoLTUwIC01MCkiLz48cGF0aCBkPSJNNTAgNEM0MSAxNyAzMiAyNiAzMiAzNkMzMiA0NyA0MCA1NSA1MCA1NUM2MCA1NSA2OCA0NyA2OCAzNkM2OCAyNiA1OSAxNyA1MCA0WiIgdHJhbnNmb3JtPSJyb3RhdGUoOTAgNTAgNTApIHRyYW5zbGF0ZSgwIDApIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMS4wKSB0cmFuc2xhdGUoLTUwIC01MCkiLz48cGF0aCBkPSJNNTAgNEM0MSAxNyAzMiAyNiAzMiAzNkMzMiA0NyA0MCA1NSA1MCA1NUM2MCA1NSA2OCA0NyA2OCAzNkM2OCAyNiA1OSAxNyA1MCA0WiIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDUwIDUwKSB0cmFuc2xhdGUoMCAwKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDEuMCkgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDI3MCA1MCA1MCkgdHJhbnNsYXRlKDAgMCkgdHJhbnNsYXRlKDUwIDUwKSBzY2FsZSgxLjApIHRyYW5zbGF0ZSgtNTAgLTUwKSIvPjwvZz48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNDQjhEMDQiIHN0cm9rZS13aWR0aD0iMS45ODAwMDAwMDAwMDAwMDAyIiB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiPjxwYXRoIGQ9Ik01MCA0QzQxIDE3IDMyIDI2IDMyIDM2QzMyIDQ3IDQwIDU1IDUwIDU1QzYwIDU1IDY4IDQ3IDY4IDM2QzY4IDI2IDU5IDE3IDUwIDRaIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDUwIDUwKSB0cmFuc2xhdGUoMCAwKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDAuNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDkwIDUwIDUwKSB0cmFuc2xhdGUoMCAwKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDAuNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA1MCkgdHJhbnNsYXRlKDAgMCkgdHJhbnNsYXRlKDUwIDUwKSBzY2FsZSgwLjYpIHRyYW5zbGF0ZSgtNTAgLTUwKSIvPjxwYXRoIGQ9Ik01MCA0QzQxIDE3IDMyIDI2IDMyIDM2QzMyIDQ3IDQwIDU1IDUwIDU1QzYwIDU1IDY4IDQ3IDY4IDM2QzY4IDI2IDU5IDE3IDUwIDRaIiB0cmFuc2Zvcm09InJvdGF0ZSgyNzAgNTAgNTApIHRyYW5zbGF0ZSgwIDApIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMC42KSB0cmFuc2xhdGUoLTUwIC01MCkiLz48L2c+PGcgZmlsbD0iI0VEQjlDMyI+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDQ1IDUwIDUwKSB0cmFuc2xhdGUoMCAtMTMpIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMC4zNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDEzNSA1MCA1MCkgdHJhbnNsYXRlKDAgLTEzKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDAuMzYpIHRyYW5zbGF0ZSgtNTAgLTUwKSIvPjxwYXRoIGQ9Ik01MCA0QzQxIDE3IDMyIDI2IDMyIDM2QzMyIDQ3IDQwIDU1IDUwIDU1QzYwIDU1IDY4IDQ3IDY4IDM2QzY4IDI2IDU5IDE3IDUwIDRaIiB0cmFuc2Zvcm09InJvdGF0ZSgyMjUgNTAgNTApIHRyYW5zbGF0ZSgwIC0xMykgdHJhbnNsYXRlKDUwIDUwKSBzY2FsZSgwLjM2KSB0cmFuc2xhdGUoLTUwIC01MCkiLz48cGF0aCBkPSJNNTAgNEM0MSAxNyAzMiAyNiAzMiAzNkMzMiA0NyA0MCA1NSA1MCA1NUM2MCA1NSA2OCA0NyA2OCAzNkM2OCAyNiA1OSAxNyA1MCA0WiIgdHJhbnNmb3JtPSJyb3RhdGUoMzE1IDUwIDUwKSB0cmFuc2xhdGUoMCAtMTMpIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMC4zNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PC9nPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEzLjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFCOUE4MSIgc3Ryb2tlLXdpZHRoPSIxLjQzMDAwMDAwMDAwMDAwMDIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI5LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0NCOEQwNCIgc3Ryb2tlLXdpZHRoPSIxLjg3Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNS40IiBmaWxsPSIjQ0I4RDA0Ii8+PC9nPjxwYXRoIGlkPSJsIiBkPSJNMzAgMTBDMzYgMTggMzcgMjggMzMgMzlDMjcgMzIgMjUgMjAgMzAgMTBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNDQjhEMDQiIHN0cm9rZS13aWR0aD0iMS43Ii8+PC9kZWZzPjx1c2UgaHJlZj0iI2IiIHg9IjUwIiB5PSI1MCIvPjx1c2UgaHJlZj0iI2IiIHg9Ii01MCIgeT0iLTUwIi8+PHVzZSBocmVmPSIjYiIgeD0iMTUwIiB5PSItNTAiLz48dXNlIGhyZWY9IiNiIiB4PSItNTAiIHk9IjE1MCIvPjx1c2UgaHJlZj0iI2IiIHg9IjE1MCIgeT0iMTUwIi8+PHVzZSBocmVmPSIjbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA4MCkgcm90YXRlKC0zMCAzMCAyNSkiLz48dXNlIGhyZWY9IiNsIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MCAwKSByb3RhdGUoNjAgMzAgMjUpIi8+PHVzZSBocmVmPSIjbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYwIDkwKSByb3RhdGUoMTUwIDMwIDI1KSIvPjx1c2UgaHJlZj0iI2wiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwIDE2MCkgcm90YXRlKDI0MCAzMCAyNSkiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIwIiByPSI0LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0VGRTlERiIgc3Ryb2tlLXdpZHRoPSIxLjciIG9wYWNpdHk9Ii43NSIvPjxjaXJjbGUgY3g9IjAiIGN5PSIxMDAiIHI9IjQuMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRUZFOURGIiBzdHJva2Utd2lkdGg9IjEuNyIgb3BhY2l0eT0iLjc1Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTAwIiByPSI0LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0VGRTlERiIgc3Ryb2tlLXdpZHRoPSIxLjciIG9wYWNpdHk9Ii43NSIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjIwMCIgcj0iNC4yIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRkU5REYiIHN0cm9rZS13aWR0aD0iMS43IiBvcGFjaXR5PSIuNzUiLz48L3N2Zz4=");
 }
 
@@ -227,9 +241,9 @@ code {
    egen färg lägger sig över och dämpar det. */
 .band::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: color-mix(in srgb, var(--deep) 88%, transparent);
+  background: var(--silke), color-mix(in srgb, var(--deep) 88%, transparent);
 }
-.band--forest::before { background: color-mix(in srgb, var(--forest) 87%, transparent); }
+.band--forest::before { background: var(--silke), color-mix(in srgb, var(--forest) 87%, transparent); }
 
 /* Övergångarna */
 .band::after {
@@ -356,7 +370,10 @@ code {
   background-color: var(--deep);
   color: var(--on-dark);
   padding-top: calc(var(--head-h) + clamp(3.5rem, 10vw, 7rem));
-  padding-bottom: clamp(4rem, 11vw, 8rem);
+  /* Underkanten måste vara högre än uttoningen (13rem), annars hamnar
+     sista textraden inne i övergången där bakgrunden redan är ljus. Med
+     8rem mätte öppettidsraden 2,2:1 mot kravet 4,5. */
+  padding-bottom: clamp(10rem, 24vw, 18rem);
 }
 
 /* Fotot tonar ut i botten i stället för att sluta med en kant. Masken
@@ -384,6 +401,12 @@ code {
 
 /* Hero-innehållet följer sidans vänstermarginal. Utan detta centreras
    blocket i vyporten och hamnar ur linje med alla andra sektioner. */
+/* Sidenvecken i hero. Ligger över fotot och mönstret men under texten. */
+.hero::before {
+  content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background: var(--silke);
+}
+
 .hero__inner { position:relative; z-index:1; }
 .hero__title { max-width: 16ch; }
 .hero__eyebrow {
@@ -422,7 +445,14 @@ code {
    --------------------------------------------------------------------- */
 
 .section { padding-block: var(--section-y); position:relative; }
-.section--alt { background: var(--paper-2); }
+/* Varannan sektion tonar in och ut i papperet i stället för att byta
+   färg tvärt. En rak kant mellan två ljusa toner är det som får sidan
+   att se ihopklistrad ut. */
+.section--alt {
+  background: linear-gradient(to bottom,
+    var(--paper) 0%, var(--paper-2) clamp(4rem, 9vw, 8rem),
+    var(--paper-2) calc(100% - clamp(4rem, 9vw, 8rem)), var(--paper) 100%);
+}
 .section__title { margin-bottom: var(--s-4); }
 .section__intro { color: var(--ink-soft); max-width: 44em; margin-bottom: var(--s-8); font-size: var(--fs-1); }
 .band .section__intro { color: var(--on-dark-2); }
