@@ -634,18 +634,23 @@ code {
 .hours__row dt { font-weight:600; }
 .hours__row dd { margin:0; color: var(--ink-soft); }
 
-.contact { display:grid; gap: clamp(var(--s-7), 5vw, var(--s-8)); }
+.contact { display:grid; gap: clamp(var(--s-6), 4vw, var(--s-8)); }
+
+/* Tre spalter bredvid varandra: öppettider, adress och telefon. Med tre
+   rubriker i rad blir h2 i full storlek för trångt, så de skalas ned
+   här — men bara här, inte globalt. */
+.contact__block .section__title {
+  font-size: clamp(var(--fs-2), 2.4vw, var(--fs-3));
+  margin-bottom: var(--s-4);
+}
 .contact__address { font-style:normal; margin-bottom: var(--s-5); }
+/* En grad mindre än rubriken ovanför, annars konkurrerar de två stora
+   graderna med varandra i stället för att läsa som rubrik plus svar. */
 .contact__phone {
-  font-family: var(--font-display); font-size: var(--fs-3); font-weight:600;
-  margin-bottom: var(--s-2); line-height:1.1;
+  font-family: var(--font-display); font-size: var(--fs-2); font-weight:600;
+  margin: var(--s-2) 0 var(--s-3); line-height:1.15;
 }
 .contact__phone a { text-decoration:none; color: var(--deep); }
-
-.portrait {
-  border-radius: var(--r-lg); margin-bottom: var(--s-4);
-  box-shadow: var(--sh-2);
-}
 
 .photo { margin: var(--s-7) 0 0; }
 .photo img { border-radius: var(--r-xl); width:100%; box-shadow: var(--sh-2); }
@@ -728,6 +733,9 @@ body.has-mobile-cta { padding-bottom: 5.5rem; }
 }
 @media (min-width: 64em) {
   .site-foot__inner { grid-template-columns: repeat(4,auto); }
+  /* Tre spalter först när det finns bredd för det. Vid 768 px står de
+     två och två, vilket är läsbarare än tre trånga. */
+  .contact { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ---------------------------------------------------------------------
