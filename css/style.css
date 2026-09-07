@@ -403,10 +403,18 @@ code {
 @keyframes linje { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 
 /* Övergången ned mot papper */
+/* Herons underkant tonar ut i papperet över en lång sträcka. Kurvan är
+   inte linjär — en rak gradient ger ett synligt band där den börjar. De
+   tre mellanstegen gör att ögat inte kan se var övergången tar vid. */
 .hero::after {
   content:""; position:absolute; left:0; right:0; bottom:0; z-index:1;
-  height: clamp(3rem, 8vw, 6rem); pointer-events:none;
-  background: linear-gradient(to top, var(--paper), transparent);
+  height: clamp(7rem, 18vw, 13rem); pointer-events:none;
+  background: linear-gradient(to top,
+    var(--paper) 0%,
+    color-mix(in srgb, var(--paper) 92%, transparent) 22%,
+    color-mix(in srgb, var(--paper) 62%, transparent) 48%,
+    color-mix(in srgb, var(--paper) 24%, transparent) 74%,
+    transparent 100%);
 }
 
 /* ---------------------------------------------------------------------
@@ -430,27 +438,57 @@ code {
    Om Cananga
    --------------------------------------------------------------------- */
 
+/* Herons mönsterväv fortsätter ned i avsnittet och löses upp. Det är
+   det som gör att övergången känns glidande i stället för att sektionen
+   börjar tvärt. */
+/* overflow-x: clip krävs — skenet bakom blombilden är medvetet större än
+   bilden och sticker ut åt sidorna. På smal skärm hamnar det utanför
+   vyporten och ger vågrät rullning. clip i stället för hidden, eftersom
+   hidden skapar en rullningskontext som kan störa position: sticky. */
+.about { position: relative; isolation: isolate; overflow-x: clip; }
+.about::before {
+  content:""; position:absolute; left:0; right:0; top:0; z-index:-1;
+  height: clamp(14rem, 30vw, 24rem); pointer-events:none;
+  background-image: var(--monster); background-size: 240px 240px;
+  opacity: .055;
+  -webkit-mask-image: linear-gradient(to bottom, #000 8%, transparent 92%);
+          mask-image: linear-gradient(to bottom, #000 8%, transparent 92%);
+}
+
 .about__grid { display:grid; gap: clamp(var(--s-7), 6vw, var(--s-9)); align-items:center; }
 
 /* Bilden tonar ut i kanterna i stället för att sluta i en rektangel.
    Det är det som gör att den ligger PÅ sidan i stället för ovanpå den. */
 .about__photo { margin:0; position:relative; }
+/* Bilden har ingen kant. Masken låter den lösas upp åt alla håll, mest
+   åt vänster där texten ligger, så att den ligger PÅ sidan i stället för
+   ovanpå den. En border-radius här skulle motverka masken — då syns en
+   hård rundad kant igen. */
 .about__photo img {
-  display:block; width:100%; border-radius: var(--r-xl);
-  -webkit-mask-image: radial-gradient(115% 115% at 50% 45%, #000 58%, transparent 92%);
-          mask-image: radial-gradient(115% 115% at 50% 45%, #000 58%, transparent 92%);
+  display:block; width:100%;
+  /* Radierna är exakt 50% med mitten i mitten. Det är avgörande: är radien
+     större än så hinner masken aldrig ner till noll innan bildkanten, och
+     då syns en halvgenomskinlig men fortfarande hård kant. Hörnen offras
+     — bilden blir en mjuk oval — men det är just det som gör att den
+     smälter in i papperet i stället för att ligga som en ruta på det. */
+  -webkit-mask-image: radial-gradient(50% 50% at 50% 50%, #000 34%,
+            rgba(0,0,0,.82) 60%, rgba(0,0,0,.38) 82%, transparent 100%);
+          mask-image: radial-gradient(50% 50% at 50% 50%, #000 34%,
+            rgba(0,0,0,.82) 60%, rgba(0,0,0,.38) 82%, transparent 100%);
+}
+
+/* Ett varmt sken bakom bilden, så att den vilar i ljus i stället för att
+   sväva mot tomt papper. */
+.about__photo::after {
+  content:""; position:absolute; inset:-18% -12%; z-index:-2; pointer-events:none;
+  background: radial-gradient(42% 42% at 50% 46%,
+    color-mix(in srgb, var(--gold) 20%, transparent), transparent 74%);
 }
 .about__photo figcaption {
   margin-top: var(--s-4); font-size: var(--fs--1); color: var(--ink-soft);
   max-width: 34ch;
 }
-/* Blomman som svag vattenstämpel bakom fotot */
-.about__photo::before {
-  content:""; position:absolute; inset:-12% -8%; z-index:-1;
-  background-image: var(--monster); background-size: 190px 190px; opacity:.11;
-  -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent 78%);
-          mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent 78%);
-}
+
 
 .credential {
   border:1px solid var(--line); border-radius: var(--r-lg);
@@ -701,7 +739,7 @@ body.has-mobile-cta { padding-bottom: 5.5rem; }
   .js .nav[data-open="true"] .nav__cta .btn { color: var(--forest); border-color: var(--line-2); }
 
   .hero__media img { object-position: 66% 45%; -webkit-mask-image:none; mask-image:none; opacity:.34; }
-  .about__photo::before { display:none; }
+  .about::before { height: 11rem; }
 }
 
 /* ---------------------------------------------------------------------
