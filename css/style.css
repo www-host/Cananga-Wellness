@@ -600,7 +600,11 @@ code {
    i. Rör den inte — den ska kunna växa fritt på höjden.
    --------------------------------------------------------------------- */
 
-.booking { margin-bottom: var(--s-5); }
+.booking { margin-bottom: 0; }
+
+/* Bokningssektionen slutar direkt efter kalendern, så den behöver inte
+   lika mycket luft nedtill som en sektion med text i underkant. */
+#boka { padding-bottom: clamp(2.5rem, 6vw, 4.5rem); }
 .booking__gate {
   border-radius: var(--r-xl); background: var(--paper-3);
   padding: clamp(var(--s-7), 6vw, var(--s-9)); text-align:center;
@@ -624,7 +628,6 @@ code {
   border:1px solid var(--line-2); border-radius: var(--r-md);
   background: var(--paper-2); padding: var(--s-5);
 }
-.booking__fallback { color: var(--ink-soft); }
 
 /* ---------------------------------------------------------------------
    Öppettider och kontakt
