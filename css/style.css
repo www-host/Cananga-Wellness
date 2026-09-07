@@ -1,155 +1,132 @@
 /* =====================================================================
    Cananga Wellness — stilmall
-   ---------------------------------------------------------------------
-   Hela webbplatsens utseende styrs av värdena i :root här nedanför.
-   Vill du byta färg, textstorlek eller luftighet — ändra där, inte
-   längre ner i filen.
 
-   FÄRGERNA KOMMER FRÅN YLANG-YLANG-BLOMMAN som salongen är uppkallad
-   efter, och från thailändskt lackarbete: guld på mörk lack, tempelgrönt,
-   ringblomsorange. Sidan är mest ljus; det djärva sparas till två, tre
-   mörka band där guldet får göra sitt jobb.
+   FORMSPRÅKET KOMMER FRÅN THAILÄNDSK TEMPELDEKOR: den fyrbladiga
+   blomman dok prajam yam, tecknad i turkos, guld och ljusrosa mot
+   djupgrönt. Färgerna är mätta ur beställarens egna referensbilder,
+   inte gissade — se kontrolltabellen i :root.
+
+   Sidan andas mellan ljusa och mörka partier. Där de möts ligger alltid
+   en mjuk övertoning, aldrig en hård kant.
    ===================================================================== */
 
-/* ---------------------------------------------------------------------
-   Typsnitt — självhostade, hämtas aldrig från Google
-   ---------------------------------------------------------------------
-   Kanit och Sarabun är båda ritade i Bangkok. unicode-range gör att en
-   svensk besökare bara laddar latin-filerna; latin-ext ligger kvar som
-   reserv för ovanliga tecken. å ä ö finns i latin-subsetet.
-   --------------------------------------------------------------------- */
-
 @font-face {
-  font-family: 'Kanit'; font-style: normal; font-weight: 500;
-  font-display: swap; src: url('../fonts/kanit-500-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'Bodoni Moda'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/bodoni-moda-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 @font-face {
-  font-family: 'Kanit'; font-style: normal; font-weight: 500;
-  font-display: swap; src: url('../fonts/kanit-500-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'Bodoni Moda'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/bodoni-moda-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Kanit'; font-style: normal; font-weight: 600;
-  font-display: swap; src: url('../fonts/kanit-600-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'Bodoni Moda'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/bodoni-moda-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 @font-face {
-  font-family: 'Kanit'; font-style: normal; font-weight: 600;
-  font-display: swap; src: url('../fonts/kanit-600-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'Bodoni Moda'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/bodoni-moda-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Sarabun'; font-style: normal; font-weight: 400;
-  font-display: swap; src: url('../fonts/sarabun-400-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'Sarabun'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/sarabun-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 @font-face {
-  font-family: 'Sarabun'; font-style: normal; font-weight: 400;
-  font-display: swap; src: url('../fonts/sarabun-400-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'Sarabun'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url('../fonts/sarabun-400-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Sarabun'; font-style: normal; font-weight: 600;
-  font-display: swap; src: url('../fonts/sarabun-600-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-                 U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-                 U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-family: 'Sarabun'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/sarabun-600-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 @font-face {
-  font-family: 'Sarabun'; font-style: normal; font-weight: 600;
-  font-display: swap; src: url('../fonts/sarabun-600-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-                 U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,
-                 U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family: 'Sarabun'; font-style: normal; font-weight: 600; font-display: swap;
+  src: url('../fonts/sarabun-600-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
 }
 
 :root {
 
-  /* --- FÄRGER --------------------------------------------------------
-     Kontrastkontroll (WCAG AA: 4,5:1 brödtext, 3:1 stor text och grafik):
-       --ink          på --jasmine ......... 15,9:1  ✓
-       --ink-muted    på --jasmine .......... 6,1:1  ✓
-       --jade         på --jasmine .......... 8,5:1  ✓  rubriker, länkar
-       vit            på --jade ............. 9,1:1  ✓  primärknapp
-       --jasmine      på --lacquer ......... 17,0:1  ✓  text på mörkt
-       --on-lacq-mut  på --lacquer ......... 10,4:1  ✓
-       --goldleaf     på --lacquer .......... 7,0:1  ✓  ordmärke, linjer
-       --ylang        på --lacquer .......... 9,4:1  ✓
-       --marigold     på --lacquer .......... 5,9:1  ✓
+  /* --- FÄRGER, mätta ur referensbilderna ------------------------------
+     Kontrollkontroll (WCAG AA: 4,5:1 brödtext, 3:1 stor text och grafik):
+       --ink       på --paper ........... 13,2:1  ✓  brödtext
+       --ink-soft  på --paper ............ 7,3:1  ✓  dämpad text
+       vit         på --deep ............ 14,0:1  ✓  knapp
+       --paper     på --deep ............ 13,2:1  ✓  text på mörkt
+       --paper     på --forest ........... 8,1:1  ✓
+       --gold      på --deep ............. 4,9:1  ✓  text på mörkt
+       --blush     på --deep ............. 8,2:1  ✓
+       --blush     på --forest ........... 5,0:1  ✓
+       --teal      på --deep ............. 4,0:1  ✓  ENDAST stor text
 
-     MÄTT OCH UNDERKÄNT — använd aldrig så här:
-       --goldleaf     på --jasmine .......... 2,4:1  ✗
-       --marigold     på --jasmine .......... 2,9:1  ✗
-     Guld och marigold hör alltså hemma ENBART på mörk lack. På ljus
-     botten bär --jade all betoning, och --marigold-dark (4,7:1) används
-     där det måste vara orange.
+     MÄTT OCH UNDERKÄNT — aldrig som text på ljus botten:
+       --gold      på --paper ............ 2,7:1  ✗
+       --teal      på --paper ............ 3,3:1  ✗
+       --blush     på --paper ............ 1,6:1  ✗
+     Guld, turkos och rosa är alltså ornamentfärger. På ljus botten bär
+     --ink och --forest all text.
      ------------------------------------------------------------------ */
-  --lacquer:        #1C1409;   /* mörk brunsvart lack — hero, band, sidfot */
-  --lacquer-2:      #2A1F10;   /* en aning ljusare, för kort på lack */
-  --jade:           #12514A;   /* tempelgrönt — knappar, länkar, rubriker */
-  --jade-deep:      #0D3B36;   /* knapp när muspekaren är över */
-  --jade-tint:      #E8F0EE;   /* mycket ljus grön bakgrundston */
-  --goldleaf:       #C79A2E;   /* guld — hårlinjer, ornament, ordmärke */
-  --ylang:          #E3B505;   /* ylang-ylang-gult — enda höga accenten */
-  --marigold:       #E4741B;   /* ringblomsorange — endast på lack */
-  --marigold-dark:  #B4530D;   /* orange som klarar kontrast på ljus botten */
-  --jasmine:        #FBF7EE;   /* varm off-white — sidans bakgrund */
-  --jasmine-2:      #F4EDE0;   /* varannan sektion */
-  --paper:          #FFFFFF;   /* kort som ligger ovanpå */
-  --ink:            #241B10;   /* brödtext på ljus botten */
-  --ink-muted:      #6B5B45;   /* dämpad brödtext */
-  --on-lacquer:     #FBF7EE;   /* brödtext på lack */
-  --on-lacq-muted:  #CFC2AC;   /* dämpad text på lack */
-  --line:           #E2DACA;   /* tunna avdelare */
-  --line-strong:    #8A7E63;   /* kant som måste synas */
+  --deep:       #06322D;   /* djup teal — hero, sidfot, brödtext */
+  --deep-2:     #0B3F38;   /* en aning ljusare, för kort på mörkt */
+  --forest:     #335343;   /* skogsgrön — mittband, mönsterbotten */
+  --forest-2:   #3D6050;
+  --teal:       #1B9A81;   /* ornament: konturer i blomman */
+  --gold:       #CB8D04;   /* ornament: hårlinjer, ringar, siffror */
+  --gold-soft:  #E0AE3E;   /* guld på mörkt när det ska lysa */
+  --blush:      #EDB9C3;   /* ornament: kronblad, små accenter */
+  --paper:      #FBF8F5;   /* sidans botten */
+  --paper-2:    #F4EEE8;   /* varannan sektion */
+  --paper-3:    #FFFFFF;   /* kort */
+  --ink:        #06322D;
+  --ink-soft:   #42574F;
+  --line:       #E4DCD4;
+  --line-2:     #C9BDB2;
+  --on-dark:    #FBF8F5;
+  --on-dark-2:  #BFCEC7;
 
-  /* --- TYPSNITT ------------------------------------------------------ */
-  --font-display: 'Kanit', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  /* --- TYPSNITT ------------------------------------------------------
+     Bodoni Moda är en didone med höga kontraster — samma register som
+     rubrikerna i referensmaterialet. Den vill ha luft och stora grader;
+     använd den aldrig under 1,2rem. Sarabun bär all löpande text.
+     ------------------------------------------------------------------ */
+  --font-display: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif;
   --font-body:    'Sarabun', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
-  /* --- TEXTSTORLEKAR (modulär skala 1,25) ---------------------------- */
-  --fs--1: 0.875rem;
-  --fs-0:  1.0625rem;
-  --fs-1:  1.33rem;
-  --fs-2:  1.66rem;
-  --fs-3:  2.07rem;
-  --fs-4:  2.59rem;
-  --fs-5:  3.24rem;
+  --fs--1: 0.875rem;  --fs-0: 1.0625rem;  --fs-1: 1.3rem;
+  --fs-2:  1.7rem;    --fs-3: 2.25rem;    --fs-4: 3rem;    --fs-5: 4rem;
+  --lh-tight: 1.08;   --lh-body: 1.7;     --measure: 66ch;
 
-  --lh-tight: 1.1;
-  --lh-snug:  1.3;
-  --lh-body:  1.65;
-  --measure:  68ch;
+  --s-1:.25rem; --s-2:.5rem;  --s-3:.75rem; --s-4:1rem;  --s-5:1.5rem;
+  --s-6:2rem;   --s-7:3rem;   --s-8:4.5rem; --s-9:7rem;
 
-  /* --- AVSTÅND ------------------------------------------------------- */
-  --s-1: 0.25rem;  --s-2: 0.5rem;   --s-3: 0.75rem;
-  --s-4: 1rem;     --s-5: 1.5rem;   --s-6: 2rem;
-  --s-7: 3rem;     --s-8: 4rem;     --s-9: 6rem;
+  --r-sm:4px; --r-md:10px; --r-lg:18px; --r-xl:26px; --r-full:999px;
 
-  /* --- RUNDNING, SKUGGA, MÅTT ---------------------------------------- */
-  --r-sm: 4px;  --r-md: 8px;  --r-lg: 14px;  --r-full: 999px;
-  --shadow-1: 0 1px 2px rgba(36, 27, 16, 0.06);
-  --shadow-2: 0 2px 6px rgba(36, 27, 16, 0.06), 0 10px 26px rgba(36, 27, 16, 0.07);
-  --wrap:      70rem;
-  --gutter:    clamp(1.25rem, 5vw, 2.5rem);
-  --section-y: clamp(3.5rem, 9vw, 6.5rem);
-  --tap:       2.75rem;          /* minsta träffyta: 44px */
-  --head-h:    4.5rem;           /* sidhuvudets höjd */
-  --ease:      cubic-bezier(0.2, 0.6, 0.3, 1);
-  --speed:     0.18s;
+  /* Skuggor tonade i sidans egen mörka grön i stället för svart. Svarta
+     skuggor mot varm papper ser smutsiga ut. */
+  --sh-1: 0 1px 2px rgba(6,50,45,.05);
+  --sh-2: 0 1px 2px rgba(6,50,45,.04), 0 8px 20px rgba(6,50,45,.06);
+  --sh-3: 0 2px 4px rgba(6,50,45,.04), 0 14px 32px rgba(6,50,45,.08),
+          0 32px 64px rgba(6,50,45,.06);
+  --sh-lyft: 0 4px 8px rgba(6,50,45,.05), 0 20px 44px rgba(6,50,45,.11),
+             0 44px 88px rgba(6,50,45,.07);
+
+  --wrap: 72rem;
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+  --section-y: clamp(4rem, 10vw, 8rem);
+  --tap: 2.75rem;
+  --head-h: 4.75rem;
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --speed: .22s;
+
+  /* Mönsterbrickan, ritad som SVG och inbakad i stilmallen. Ingen
+     bildfil, ingen extra nedladdning, skarp på alla skärmar. */
+  --monster: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PGRlZnM+PGcgaWQ9ImIiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFCOUE4MSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHZlY3Rvci1lZmZlY3Q9Im5vbi1zY2FsaW5nLXN0cm9rZSI+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDAgNTAgNTApIHRyYW5zbGF0ZSgwIDApIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMS4wKSB0cmFuc2xhdGUoLTUwIC01MCkiLz48cGF0aCBkPSJNNTAgNEM0MSAxNyAzMiAyNiAzMiAzNkMzMiA0NyA0MCA1NSA1MCA1NUM2MCA1NSA2OCA0NyA2OCAzNkM2OCAyNiA1OSAxNyA1MCA0WiIgdHJhbnNmb3JtPSJyb3RhdGUoOTAgNTAgNTApIHRyYW5zbGF0ZSgwIDApIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMS4wKSB0cmFuc2xhdGUoLTUwIC01MCkiLz48cGF0aCBkPSJNNTAgNEM0MSAxNyAzMiAyNiAzMiAzNkMzMiA0NyA0MCA1NSA1MCA1NUM2MCA1NSA2OCA0NyA2OCAzNkM2OCAyNiA1OSAxNyA1MCA0WiIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDUwIDUwKSB0cmFuc2xhdGUoMCAwKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDEuMCkgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDI3MCA1MCA1MCkgdHJhbnNsYXRlKDAgMCkgdHJhbnNsYXRlKDUwIDUwKSBzY2FsZSgxLjApIHRyYW5zbGF0ZSgtNTAgLTUwKSIvPjwvZz48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNDQjhEMDQiIHN0cm9rZS13aWR0aD0iMS45ODAwMDAwMDAwMDAwMDAyIiB2ZWN0b3ItZWZmZWN0PSJub24tc2NhbGluZy1zdHJva2UiPjxwYXRoIGQ9Ik01MCA0QzQxIDE3IDMyIDI2IDMyIDM2QzMyIDQ3IDQwIDU1IDUwIDU1QzYwIDU1IDY4IDQ3IDY4IDM2QzY4IDI2IDU5IDE3IDUwIDRaIiB0cmFuc2Zvcm09InJvdGF0ZSgwIDUwIDUwKSB0cmFuc2xhdGUoMCAwKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDAuNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDkwIDUwIDUwKSB0cmFuc2xhdGUoMCAwKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDAuNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA1MCkgdHJhbnNsYXRlKDAgMCkgdHJhbnNsYXRlKDUwIDUwKSBzY2FsZSgwLjYpIHRyYW5zbGF0ZSgtNTAgLTUwKSIvPjxwYXRoIGQ9Ik01MCA0QzQxIDE3IDMyIDI2IDMyIDM2QzMyIDQ3IDQwIDU1IDUwIDU1QzYwIDU1IDY4IDQ3IDY4IDM2QzY4IDI2IDU5IDE3IDUwIDRaIiB0cmFuc2Zvcm09InJvdGF0ZSgyNzAgNTAgNTApIHRyYW5zbGF0ZSgwIDApIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMC42KSB0cmFuc2xhdGUoLTUwIC01MCkiLz48L2c+PGcgZmlsbD0iI0VEQjlDMyI+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDQ1IDUwIDUwKSB0cmFuc2xhdGUoMCAtMTMpIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMC4zNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PHBhdGggZD0iTTUwIDRDNDEgMTcgMzIgMjYgMzIgMzZDMzIgNDcgNDAgNTUgNTAgNTVDNjAgNTUgNjggNDcgNjggMzZDNjggMjYgNTkgMTcgNTAgNFoiIHRyYW5zZm9ybT0icm90YXRlKDEzNSA1MCA1MCkgdHJhbnNsYXRlKDAgLTEzKSB0cmFuc2xhdGUoNTAgNTApIHNjYWxlKDAuMzYpIHRyYW5zbGF0ZSgtNTAgLTUwKSIvPjxwYXRoIGQ9Ik01MCA0QzQxIDE3IDMyIDI2IDMyIDM2QzMyIDQ3IDQwIDU1IDUwIDU1QzYwIDU1IDY4IDQ3IDY4IDM2QzY4IDI2IDU5IDE3IDUwIDRaIiB0cmFuc2Zvcm09InJvdGF0ZSgyMjUgNTAgNTApIHRyYW5zbGF0ZSgwIC0xMykgdHJhbnNsYXRlKDUwIDUwKSBzY2FsZSgwLjM2KSB0cmFuc2xhdGUoLTUwIC01MCkiLz48cGF0aCBkPSJNNTAgNEM0MSAxNyAzMiAyNiAzMiAzNkMzMiA0NyA0MCA1NSA1MCA1NUM2MCA1NSA2OCA0NyA2OCAzNkM2OCAyNiA1OSAxNyA1MCA0WiIgdHJhbnNmb3JtPSJyb3RhdGUoMzE1IDUwIDUwKSB0cmFuc2xhdGUoMCAtMTMpIHRyYW5zbGF0ZSg1MCA1MCkgc2NhbGUoMC4zNikgdHJhbnNsYXRlKC01MCAtNTApIi8+PC9nPjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEzLjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzFCOUE4MSIgc3Ryb2tlLXdpZHRoPSIxLjQzMDAwMDAwMDAwMDAwMDIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI5LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0NCOEQwNCIgc3Ryb2tlLXdpZHRoPSIxLjg3Ii8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNS40IiBmaWxsPSIjQ0I4RDA0Ii8+PC9nPjxwYXRoIGlkPSJsIiBkPSJNMzAgMTBDMzYgMTggMzcgMjggMzMgMzlDMjcgMzIgMjUgMjAgMzAgMTBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNDQjhEMDQiIHN0cm9rZS13aWR0aD0iMS43Ii8+PC9kZWZzPjx1c2UgaHJlZj0iI2IiIHg9IjUwIiB5PSI1MCIvPjx1c2UgaHJlZj0iI2IiIHg9Ii01MCIgeT0iLTUwIi8+PHVzZSBocmVmPSIjYiIgeD0iMTUwIiB5PSItNTAiLz48dXNlIGhyZWY9IiNiIiB4PSItNTAiIHk9IjE1MCIvPjx1c2UgaHJlZj0iI2IiIHg9IjE1MCIgeT0iMTUwIi8+PHVzZSBocmVmPSIjbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCA4MCkgcm90YXRlKC0zMCAzMCAyNSkiLz48dXNlIGhyZWY9IiNsIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MCAwKSByb3RhdGUoNjAgMzAgMjUpIi8+PHVzZSBocmVmPSIjbCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYwIDkwKSByb3RhdGUoMTUwIDMwIDI1KSIvPjx1c2UgaHJlZj0iI2wiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwIDE2MCkgcm90YXRlKDI0MCAzMCAyNSkiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIwIiByPSI0LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0VGRTlERiIgc3Ryb2tlLXdpZHRoPSIxLjciIG9wYWNpdHk9Ii43NSIvPjxjaXJjbGUgY3g9IjAiIGN5PSIxMDAiIHI9IjQuMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRUZFOURGIiBzdHJva2Utd2lkdGg9IjEuNyIgb3BhY2l0eT0iLjc1Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTAwIiByPSI0LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0VGRTlERiIgc3Ryb2tlLXdpZHRoPSIxLjciIG9wYWNpdHk9Ii43NSIvPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjIwMCIgcj0iNC4yIiBmaWxsPSJub25lIiBzdHJva2U9IiNFRkU5REYiIHN0cm9rZS13aWR0aD0iMS43IiBvcGFjaXR5PSIuNzUiLz48L3N2Zz4=");
 }
 
 /* ---------------------------------------------------------------------
@@ -157,364 +134,392 @@
    --------------------------------------------------------------------- */
 
 *, *::before, *::after { box-sizing: border-box; }
-
-/* Ett element med hidden-attributet ska alltid vara dolt. Utan den här
-   raden vinner .mobile-cta { display: flex } över webbläsarens egen
-   regel, och den fasta mobilknappen syns även på stora skärmar. */
 [hidden] { display: none !important; }
 
 html {
   scroll-behavior: smooth;
-  /* Minst lika stort som det fasta sidhuvudet, annars hamnar rubriken
-     man hoppar till dold bakom det. */
-  scroll-padding-top: calc(var(--head-h) + 1rem);
+  scroll-padding-top: calc(var(--head-h) + 1.5rem);
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  background: var(--jasmine);
+  background: var(--paper);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--fs-0);
   line-height: var(--lh-body);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Sidor utan hero (t.ex. integritetspolicyn) behöver ge plats åt det
-   fasta sidhuvudet. Sidor med hero sköter det i .hero-regeln i stället. */
 body:not(.has-hero) main { padding-top: var(--head-h); }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   font-family: var(--font-display);
-  color: var(--jade);
+  font-weight: 400;
+  color: var(--ink);
   line-height: var(--lh-tight);
-  letter-spacing: -0.01em;
   margin: 0 0 var(--s-4);
   text-wrap: balance;
 }
-h1 { font-weight: 600; font-size: clamp(2.2rem, 6vw, var(--fs-5)); }
-h2 { font-weight: 500; font-size: clamp(var(--fs-2), 4vw, var(--fs-4)); }
-h3 { font-weight: 500; font-size: var(--fs-1); }
-h4 { font-weight: 600; font-size: var(--fs-0); }
+h1 { font-size: clamp(2.5rem, 6.5vw, var(--fs-5)); letter-spacing: -.015em; }
+h2 { font-size: clamp(var(--fs-2), 4.5vw, var(--fs-4)); letter-spacing: -.01em; }
+h3 { font-size: var(--fs-1); }
+h4 { font-family: var(--font-body); font-weight: 600; font-size: var(--fs-0); margin: 0 0 var(--s-3); }
 
 p { margin: 0 0 var(--s-4); max-width: var(--measure); }
 p:last-child { margin-bottom: 0; }
 
-a { color: var(--jade); text-underline-offset: 0.18em; transition: color var(--speed) var(--ease); }
-a:hover { color: var(--marigold-dark); text-decoration-thickness: 2px; }
+a { color: var(--forest); text-underline-offset: .18em; transition: color var(--speed) var(--ease); }
+a:hover { color: var(--deep); text-decoration-thickness: 2px; }
 
 ul, ol { margin: 0; padding: 0; list-style: none; }
 img, svg { max-width: 100%; height: auto; }
-
 strong { font-weight: 600; }
 
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.9em; background: var(--jasmine-2);
-  padding: 0.1em 0.35em; border-radius: var(--r-sm);
+  font-size: .9em; background: var(--paper-2);
+  padding: .1em .35em; border-radius: var(--r-sm);
 }
 
-/* Fokusmarkering — måste synas på både ljus och mörk botten */
 :focus-visible {
-  outline: 3px solid var(--marigold-dark);
-  outline-offset: 3px;
-  border-radius: var(--r-sm);
+  outline: 3px solid var(--gold); outline-offset: 3px; border-radius: var(--r-sm);
 }
-.band--lacquer :focus-visible,
-.site-foot :focus-visible { outline-color: var(--ylang); }
 
 .visually-hidden {
-  position: absolute; width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
 }
 
 .skip {
-  position: absolute; top: -100%; left: 0; z-index: 100;
-  background: var(--jade); color: var(--jasmine);
-  padding: var(--s-3) var(--s-5);
-  font-weight: 600; text-decoration: none;
+  position:absolute; top:-100%; left:0; z-index:100;
+  background: var(--deep); color: var(--on-dark);
+  padding: var(--s-3) var(--s-5); font-weight:600; text-decoration:none;
 }
-.skip:focus { top: 0; }
+.skip:focus { top:0; }
 
-.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
-
-.fineprint { font-size: var(--fs--1); color: var(--ink-muted); }
-.band--lacquer .fineprint { color: var(--on-lacq-muted); }
+.wrap { width:100%; max-width: var(--wrap); margin-inline:auto; padding-inline: var(--gutter); }
+.fineprint { font-size: var(--fs--1); color: var(--ink-soft); }
+.lead { font-size: var(--fs-1); color: var(--ink-soft); }
 
 /* ---------------------------------------------------------------------
-   Kanok — thailändsk flamslinga
-   ---------------------------------------------------------------------
-   Ett enda ornament, använt på ett enda sätt: en tunn guldbård som
-   ramar in de mörka sektionerna upptill och nedtill, som kanten på en
-   lackpanel. Den ritas som en tilande SVG i CSS, alltså ingen bildfil
-   och ingen extra nedladdning. Använd den inte någon annanstans — det
-   är återhållsamheten som skiljer det här från en temarestaurang.
+   Mörka band och de mjuka övergångarna mellan sektioner
+
+   Ett mörkt parti möter aldrig ett ljust med en hård kant. Övergången
+   ligger som en pseudo-element-gradient i över- och underkant, så att
+   färgen tonar ut i papperet. Det är det som gör att sidan flyter i
+   stället för att staplas.
    --------------------------------------------------------------------- */
 
-.kanok {
-  height: 14px;
-  background-repeat: repeat-x;
-  background-position: center;
-  background-size: 48px 14px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='14' viewBox='0 0 48 14'%3E%3Cg fill='none' stroke='%23C79A2E' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M0 12.5h48'/%3E%3Cpath d='M4 12.5c4.5 0 6.5-3 7.5-6.2C12.2 4 14 3 15.2 4.4c1.2 1.4 0 3.6-2 4.1'/%3E%3Cpath d='M28 12.5c4.5 0 6.5-3 7.5-6.2C36.2 4 38 3 39.2 4.4c1.2 1.4 0 3.6-2 4.1'/%3E%3Cpath d='M20 12.5c1.8 0 2.8-1.3 3.2-2.7'/%3E%3Cpath d='M44 12.5c1.8 0 2.8-1.3 3.2-2.7'/%3E%3C/g%3E%3C/svg%3E");
+.band {
+  position: relative;
+  color: var(--on-dark);
+  background-color: var(--deep);
+  background-image: var(--monster);
+  background-size: 210px 210px;
+  isolation: isolate;
 }
-.kanok--flip { transform: scaleY(-1); }
+.band--forest { background-color: var(--forest); }
 
-/* Guldlinjen under hero ritar sig själv en gång vid laddning, vänster
-   till höger. Det är sidans enda iscensatta rörelse. */
-.kanok--draw { transform-origin: left center; }
-.js .kanok--draw { animation: kanok-in 700ms var(--ease) both; }
-@keyframes kanok-in { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+/* Mönstret ska anas, inte läsas. Ett halvgenomskinligt lager i bandets
+   egen färg lägger sig över och dämpar det. */
+.band::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: color-mix(in srgb, var(--deep) 88%, transparent);
+}
+.band--forest::before { background: color-mix(in srgb, var(--forest) 87%, transparent); }
+
+/* Övergångarna */
+.band::after {
+  content: ""; position: absolute; left: 0; right: 0; z-index: -1;
+  height: clamp(3rem, 8vw, 6rem); pointer-events: none;
+}
+.band--tona-topp::after {
+  top: 0;
+  background: linear-gradient(to bottom, var(--paper), color-mix(in srgb, var(--paper) 0%, transparent));
+}
+.band--tona-botten::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--paper), color-mix(in srgb, var(--paper) 0%, transparent));
+}
+/* Båda kanterna samtidigt kräver ett extra lager */
+.band--tona-bada::after {
+  top: 0; bottom: 0; height: auto;
+  background:
+    linear-gradient(to bottom, var(--paper), transparent clamp(3rem,8vw,6rem)),
+    linear-gradient(to top, var(--paper), transparent clamp(3rem,8vw,6rem));
+}
+
+.band h1, .band h2, .band h3 { color: var(--on-dark); }
+.band p { color: var(--on-dark-2); }
+.band .fineprint { color: var(--on-dark-2); }
+.band a { color: var(--gold-soft); }
+.band a:hover { color: var(--blush); }
+.band :focus-visible { outline-color: var(--blush); }
+
+/* Guldhårlinje — den enda linjen på sidan, används sparsamt */
+.hairline {
+  height: 1px; border: 0; margin: 0;
+  background: linear-gradient(to right,
+    color-mix(in srgb, var(--gold) 0%, transparent), var(--gold) 22%,
+    var(--gold) 78%, color-mix(in srgb, var(--gold) 0%, transparent));
+  opacity: .55;
+}
 
 /* ---------------------------------------------------------------------
    Knappar
    --------------------------------------------------------------------- */
 
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: var(--s-2);
-  min-height: 3rem;
-  padding: var(--s-3) var(--s-6);
-  border: 1px solid transparent;
-  border-radius: var(--r-full);
+  display:inline-flex; align-items:center; justify-content:center; gap: var(--s-2);
+  min-height: 3.1rem; padding: var(--s-3) var(--s-6);
+  border: 1px solid transparent; border-radius: var(--r-full);
   font-family: var(--font-body); font-weight: 600; font-size: var(--fs-0);
-  text-decoration: none; cursor: pointer;
-  transition: background-color var(--speed) var(--ease),
-              border-color var(--speed) var(--ease),
-              color var(--speed) var(--ease),
-              box-shadow var(--speed) var(--ease);
+  letter-spacing: .01em; text-decoration:none; cursor:pointer;
+  transition: background-color var(--speed) var(--ease), color var(--speed) var(--ease),
+              border-color var(--speed) var(--ease), box-shadow var(--speed) var(--ease),
+              transform var(--speed) var(--ease);
+}
+.btn--primary { background: var(--deep); color:#fff; box-shadow: var(--sh-2); }
+.btn--primary:hover { background: var(--forest); color:#fff; box-shadow: var(--sh-3); transform: translateY(-1px); }
+.btn--primary:active { transform:none; box-shadow: var(--sh-1); }
+
+/* På mörk botten skulle den mörkgröna knappen försvinna. Där blir den
+   guld med mörk text i stället — uppmätt 4,9:1, godkänt för brödtext. */
+.hero .btn--primary, .band .btn--primary {
+  background: var(--gold); color: var(--deep); box-shadow: var(--sh-2);
+}
+.hero .btn--primary:hover, .band .btn--primary:hover {
+  background: var(--gold-soft); color: var(--deep);
 }
 
-.btn--primary { background: var(--jade); color: #FFFFFF; box-shadow: var(--shadow-1); }
-.btn--primary:hover { background: var(--jade-deep); color: #FFFFFF; box-shadow: var(--shadow-2); }
-.btn--primary:disabled { opacity: 0.55; cursor: default; }
+.btn--quiet { background: var(--paper-3); color: var(--forest); border-color: var(--line-2); }
+.btn--quiet:hover { background: var(--paper-2); border-color: var(--forest); color: var(--deep); }
 
-.btn--quiet { background: var(--paper); color: var(--jade); border-color: var(--line-strong); }
-.btn--quiet:hover { background: var(--jade-tint); color: var(--jade-deep); border-color: var(--jade); }
-
-/* På mörk lack: guldkantad, guldtext. Guld mot lack mäter 7,0:1. */
-.btn--gold { background: transparent; color: var(--goldleaf); border-color: var(--goldleaf); }
-.btn--gold:hover { background: rgba(199, 154, 46, 0.14); color: var(--ylang); border-color: var(--ylang); }
+.btn--gold { background: transparent; color: var(--gold-soft); border-color: var(--gold); }
+.btn--gold:hover { background: color-mix(in srgb, var(--gold) 16%, transparent); color: var(--blush); border-color: var(--blush); }
 
 .btn--ghost {
-  background: transparent; color: var(--jade); border-color: var(--line-strong);
+  background: transparent; color: var(--forest); border-color: var(--line-2);
   min-height: var(--tap); padding: var(--s-2) var(--s-4); font-size: var(--fs--1);
 }
-.btn--ghost:hover { background: var(--jade-tint); border-color: var(--jade); }
+.btn--ghost:hover { background: var(--paper-2); border-color: var(--forest); }
 
 /* ---------------------------------------------------------------------
-   Sidhuvud — genomskinligt över hero, fast jasminvitt när man rullat
+   Sidhuvud — genomskinligt över hero, papper när man rullat
    --------------------------------------------------------------------- */
 
 .site-head {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 40;
-  height: var(--head-h);
-  display: flex; align-items: center;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background-color 0.25s var(--ease), border-color 0.25s var(--ease);
+  position: fixed; top:0; left:0; right:0; z-index:40;
+  height: var(--head-h); display:flex; align-items:center;
+  background: transparent; border-bottom: 1px solid transparent;
+  transition: background-color .3s var(--ease), border-color .3s var(--ease),
+              box-shadow .3s var(--ease);
 }
 .site-head.is-solid {
-  background: var(--jasmine);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(10px);
   border-bottom-color: var(--line);
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--sh-1);
 }
+.site-head__inner { display:flex; align-items:center; justify-content:space-between; gap: var(--s-4); }
 
-.site-head__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); }
-
-.brand { display: inline-flex; align-items: center; gap: var(--s-3); min-height: var(--tap); text-decoration: none; }
-.brand__mark { display: inline-flex; color: var(--goldleaf); }
+.brand { display:inline-flex; align-items:center; gap: var(--s-3); min-height: var(--tap); text-decoration:none; }
+.brand__mark { display:inline-flex; width:2.15rem; }
 .brand__name {
-  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1);
-  letter-spacing: -0.01em; color: var(--on-lacquer);
+  font-family: var(--font-display); font-weight:600; font-size: var(--fs-1);
+  letter-spacing:.005em; color: var(--on-dark); white-space:nowrap;
 }
-.site-head.is-solid .brand__name { color: var(--jade); }
-.site-head.is-solid .brand__mark { color: var(--jade); }
+.site-head.is-solid .brand__name { color: var(--deep); }
 
-.nav__list { display: flex; align-items: center; gap: var(--s-3); }
-/* min-height ger menylänkarna en träffyta på 44 px trots att texten bara
-   är 18 px hög. Länkar inne i löpande text är undantagna i WCAG 2.2, men
-   menyval är det inte. */
+.nav__list { display:flex; align-items:center; gap: var(--s-3); }
 .nav a {
-  display: inline-flex; align-items: center; justify-content: center;
-  min-height: var(--tap); min-width: var(--tap); padding-inline: var(--s-2);
-  color: var(--on-lacquer); text-decoration: none;
-  font-size: var(--fs--1); font-weight: 600;
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height: var(--tap); min-width: var(--tap); padding-inline: var(--s-3);
+  color: var(--on-dark); text-decoration:none; font-size: var(--fs--1); font-weight:600;
 }
-.nav a:hover { color: var(--ylang); }
+.nav a:hover { color: var(--gold-soft); }
 .site-head.is-solid .nav a { color: var(--ink); }
-.site-head.is-solid .nav a:hover { color: var(--jade); }
-.nav__cta .btn { color: var(--goldleaf); border-color: var(--goldleaf); }
-.site-head.is-solid .nav__cta .btn { color: var(--jade); border-color: var(--line-strong); }
-
-.nav-toggle { display: none; }
+.site-head.is-solid .nav a:hover { color: var(--forest); }
+.nav__cta .btn { color: var(--gold-soft); border-color: var(--gold); }
+.site-head.is-solid .nav__cta .btn { color: var(--forest); border-color: var(--line-2); }
+.nav-toggle { display:none; }
 
 /* ---------------------------------------------------------------------
-   Hero — sidans enda djärva yta
+   Hero
    --------------------------------------------------------------------- */
 
 .hero {
-  position: relative;
-  background: var(--lacquer);
-  color: var(--on-lacquer);
-  padding-top: calc(var(--head-h) + clamp(3rem, 9vw, 6rem));
-  padding-bottom: clamp(3rem, 8vw, 5.5rem);
-  overflow: hidden;
+  position: relative; overflow: hidden;
+  background-color: var(--deep);
+  color: var(--on-dark);
+  padding-top: calc(var(--head-h) + clamp(3.5rem, 10vw, 7rem));
+  padding-bottom: clamp(4rem, 11vw, 8rem);
 }
 
-/* Fotot av fasaden ligger som bakgrund. Gradienten måste vara mörk nog
-   att brödtexten klarar kontrastkravet ovanpå bilden — kontrollmätt i
-   webbläsare, inte uppskattad. */
-.hero__media { position: absolute; inset: 0; z-index: 0; }
-.hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+/* Fotot tonar ut i botten i stället för att sluta med en kant. Masken
+   gör bilden genomskinlig mot vänster och nedåt, så att den smälter in
+   i den mörka färgen i stället för att ligga som en ruta ovanpå. */
+.hero__media { position:absolute; inset:0; z-index:0; }
+.hero__media img {
+  width:100%; height:100%; object-fit:cover; object-position:60% 45%;
+  -webkit-mask-image: linear-gradient(to left, #000 12%, transparent 78%);
+          mask-image: linear-gradient(to left, #000 12%, transparent 78%);
+  opacity: .5;
+}
 .hero__media::after {
-  content: ""; position: absolute; inset: 0;
+  content:""; position:absolute; inset:0;
   background:
-    linear-gradient(100deg, rgba(28,20,9,0.97) 0%, rgba(28,20,9,0.93) 42%,
-                            rgba(28,20,9,0.72) 72%, rgba(28,20,9,0.55) 100%),
-    linear-gradient(to bottom, rgba(28,20,9,0.55), rgba(28,20,9,0.30));
+    radial-gradient(120% 90% at 12% 40%, rgba(6,50,45,.96) 22%, rgba(6,50,45,.62) 62%, rgba(6,50,45,.35) 100%),
+    linear-gradient(to bottom, rgba(6,50,45,.55), rgba(6,50,45,.2) 40%, rgba(6,50,45,.9));
 }
 
-.hero__inner { position: relative; z-index: 1; }
-.hero__title { color: var(--on-lacquer); margin-bottom: var(--s-5); max-width: 15ch; }
-.hero__lead { font-size: var(--fs-1); color: var(--on-lacq-muted); max-width: 46ch; margin-bottom: var(--s-6); }
-.hero__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-5); }
-.hero__meta { font-size: var(--fs--1); color: var(--on-lacq-muted); margin: 0; }
+/* Mönstret ligger som en mycket svag väv över hela hero */
+.hero__monster {
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image: var(--monster); background-size: 240px 240px; opacity:.07;
+}
 
-.hero .kanok { position: absolute; left: 0; right: 0; z-index: 1; }
-.hero .kanok--top { top: var(--head-h); }
-.hero .kanok--bottom { bottom: 0; }
+/* Hero-innehållet följer sidans vänstermarginal. Utan detta centreras
+   blocket i vyporten och hamnar ur linje med alla andra sektioner. */
+.hero__inner { position:relative; z-index:1; }
+.hero__title { max-width: 16ch; }
+.hero__eyebrow {
+  font-family: var(--font-body); font-size: var(--fs--1); font-weight:600;
+  letter-spacing:.22em; text-transform:uppercase; color: var(--gold-soft);
+  margin: 0 0 var(--s-5);
+}
+.hero__title { color: var(--on-dark); margin-bottom: var(--s-5); }
+.hero__lead { font-size: var(--fs-1); color: var(--on-dark-2); max-width: 42ch; margin-bottom: var(--s-6); }
+.hero__actions { display:flex; flex-wrap:wrap; gap: var(--s-3); margin-bottom: var(--s-5); }
+.hero__meta { font-size: var(--fs--1); color: var(--on-dark-2); margin:0; }
+.hero .hairline { position:relative; z-index:1; max-width: 34rem; margin-bottom: var(--s-6); }
+
+/* Guldlinjen ritar sig själv en gång vid laddning — sidans enda
+   iscensatta rörelse. */
+.js .hero .hairline { animation: linje 900ms var(--ease) both; }
+@keyframes linje { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* Övergången ned mot papper */
+.hero::after {
+  content:""; position:absolute; left:0; right:0; bottom:0; z-index:1;
+  height: clamp(3rem, 8vw, 6rem); pointer-events:none;
+  background: linear-gradient(to top, var(--paper), transparent);
+}
 
 /* ---------------------------------------------------------------------
    Sektioner
    --------------------------------------------------------------------- */
 
-.section { padding-block: var(--section-y); }
-.section--alt { background: var(--jasmine-2); }
+.section { padding-block: var(--section-y); position:relative; }
+.section--alt { background: var(--paper-2); }
+.section__title { margin-bottom: var(--s-4); }
+.section__intro { color: var(--ink-soft); max-width: 44em; margin-bottom: var(--s-8); font-size: var(--fs-1); }
+.band .section__intro { color: var(--on-dark-2); }
 
-.band--lacquer {
-  position: relative;
-  background: var(--lacquer);
-  color: var(--on-lacquer);
+.etikett {
+  font-family: var(--font-body); font-size: var(--fs--1); font-weight:600;
+  letter-spacing:.22em; text-transform:uppercase; color: var(--forest);
+  margin: 0 0 var(--s-3);
 }
-.band--lacquer h2, .band--lacquer h3 { color: var(--ylang); }
-.band--lacquer p { color: var(--on-lacq-muted); }
-.band--lacquer .kanok { position: absolute; left: 0; right: 0; }
-.band--lacquer .kanok--top { top: 0; }
-.band--lacquer .kanok--bottom { bottom: 0; }
-
-.section__title { position: relative; }
-.section__intro { color: var(--ink-muted); max-width: 46em; margin-bottom: var(--s-7); }
-.band--lacquer .section__intro { color: var(--on-lacq-muted); }
+.band .etikett { color: var(--gold-soft); }
 
 /* ---------------------------------------------------------------------
-   Om Cananga — blomman som verksamheten är uppkallad efter
+   Om Cananga
    --------------------------------------------------------------------- */
 
-.about { position: relative; }
-.about__grid { display: grid; gap: var(--s-7); }
+.about__grid { display:grid; gap: clamp(var(--s-7), 6vw, var(--s-9)); align-items:center; }
 
-.about__text { position: relative; z-index: 1; }
-
-/* Fotot av blomman verksamheten är uppkallad efter. Det ersatte en
-   SVG-vattenstämpel: ett riktigt foto illustrerar stycket bättre, och
-   text ovanpå en nedtonad bild är alltid en kontrastrisk. */
-.about__photo { margin: 0; }
+/* Bilden tonar ut i kanterna i stället för att sluta i en rektangel.
+   Det är det som gör att den ligger PÅ sidan i stället för ovanpå den. */
+.about__photo { margin:0; position:relative; }
 .about__photo img {
-  display: block; width: 100%;
-  border-radius: var(--r-lg);
-  border: 1px solid var(--line);
+  display:block; width:100%; border-radius: var(--r-xl);
+  -webkit-mask-image: radial-gradient(115% 115% at 50% 45%, #000 58%, transparent 92%);
+          mask-image: radial-gradient(115% 115% at 50% 45%, #000 58%, transparent 92%);
 }
 .about__photo figcaption {
-  margin-top: var(--s-3);
-  font-size: var(--fs--1);
-  color: var(--ink-muted);
+  margin-top: var(--s-4); font-size: var(--fs--1); color: var(--ink-soft);
+  max-width: 34ch;
 }
-.about__lead { font-size: var(--fs-1); color: var(--ink); }
+/* Blomman som svag vattenstämpel bakom fotot */
+.about__photo::before {
+  content:""; position:absolute; inset:-12% -8%; z-index:-1;
+  background-image: var(--monster); background-size: 190px 190px; opacity:.11;
+  -webkit-mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent 78%);
+          mask-image: radial-gradient(60% 60% at 50% 50%, #000, transparent 78%);
+}
 
-/* Ruta för certifiering. Ligger dold tills den fylls i — se HTML-filen. */
 .credential {
-  border: 1px solid var(--line-strong); border-radius: var(--r-md);
-  padding: var(--s-5); background: var(--paper); margin-top: var(--s-6);
+  border:1px solid var(--line); border-radius: var(--r-lg);
+  padding: var(--s-5); background: var(--paper-3);
+  box-shadow: var(--sh-1); margin-top: var(--s-6);
 }
-.credential h3 { margin-bottom: var(--s-2); }
 
 /* ---------------------------------------------------------------------
    Behandlingar
    --------------------------------------------------------------------- */
 
-.treatments { display: grid; gap: var(--s-5); }
+.treatments { display:grid; gap: clamp(var(--s-5), 3vw, var(--s-6)); }
 
 .treatment {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-1);
+  position:relative; overflow:hidden;
+  background: var(--paper-3);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-2);
+  transition: box-shadow .3s var(--ease), transform .3s var(--ease);
 }
+.treatment:hover { box-shadow: var(--sh-lyft); transform: translateY(-3px); }
 
-/* Kortets övre panel. Thaimassagen får den mörka lackpanelen och leder
-   därmed visuellt; oljemassagen får den ljusare jadepanelen. */
 .treatment__panel {
-  position: relative;
-  min-height: 8.5rem;
-  display: flex; align-items: flex-end;
-  padding: var(--s-5);
-  background: var(--lacquer-2);
+  position:relative; min-height: 9.5rem;
+  display:flex; align-items:flex-end; padding: var(--s-6);
+  background-color: var(--deep);
+  background-image: var(--monster); background-size: 165px 165px;
 }
-.treatment--lead .treatment__panel { background: var(--lacquer); }
-.treatment--second .treatment__panel { background: var(--jade); }
-.treatment__panel .kanok { position: absolute; left: 0; right: 0; bottom: 0; }
-.treatment__mark {
-  position: absolute; right: var(--s-5); top: var(--s-4);
-  width: 4.5rem; color: var(--goldleaf); opacity: 0.55;
+.treatment--second .treatment__panel { background-color: var(--forest); }
+.treatment__panel::before {
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(6,50,45,.94), rgba(6,50,45,.62));
 }
-.treatment__name { position: relative; color: var(--ylang); margin: 0; }
-/* På den gröna panelen läser jasmine bättre än ylang: 8,5:1 mot 4,7:1. */
-.treatment--second .treatment__name { color: var(--jasmine); }
+.treatment--second .treatment__panel::before {
+  background: linear-gradient(to top, rgba(51,83,67,.94), rgba(51,83,67,.6));
+}
+.treatment__name { position:relative; color: var(--on-dark); margin:0; font-size: var(--fs-2); }
 
-.treatment__body { padding: var(--s-5) clamp(var(--s-5), 4vw, var(--s-6)) var(--s-6); }
-.treatment__desc { color: var(--ink-muted); margin: 0 0 var(--s-5); }
+.treatment__body { padding: clamp(var(--s-5), 4vw, var(--s-7)); }
+.treatment__desc { color: var(--ink-soft); margin: 0 0 var(--s-5); }
 
-.options { display: grid; }
+.options { display:grid; }
 .option { padding: var(--s-4) 0; border-top: 1px solid var(--line); }
 .option__head {
-  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
-  gap: var(--s-2) var(--s-4); margin: 0 0 var(--s-1); max-width: none;
+  display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between;
+  gap: var(--s-2) var(--s-4); margin: 0 0 var(--s-1); max-width:none;
 }
-.option__time { font-weight: 600; color: var(--ink); }
-.option__price { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1); color: var(--jade); white-space: nowrap; }
-.option__desc { margin: 0; max-width: none; color: var(--ink-muted); font-size: var(--fs--1); }
+.option__time { font-weight:600; color: var(--ink); }
+.option__price {
+  font-family: var(--font-display); font-weight:600; font-size: var(--fs-2);
+  color: var(--forest); white-space:nowrap; line-height:1;
+}
+.option__desc { margin:0; max-width:none; color: var(--ink-soft); font-size: var(--fs--1); }
 
 /* ---------------------------------------------------------------------
-   Så går det till — tre steg, därför är numreringen befogad
+   Så går det till
    --------------------------------------------------------------------- */
 
-.steps { display: grid; gap: var(--s-6); counter-reset: steg; }
-.step { position: relative; padding-left: 3.5rem; }
+.steps { display:grid; gap: clamp(var(--s-6), 5vw, var(--s-8)); counter-reset: steg; }
+.step { position:relative; padding-left: 4.25rem; }
 .step::before {
-  counter-increment: steg; content: counter(steg);
-  position: absolute; left: 0; top: -0.15em;
-  width: 2.5rem; height: 2.5rem;
-  display: grid; place-items: center;
-  border: 1px solid var(--goldleaf); border-radius: 50%;
-  font-family: var(--font-display); font-weight: 500; font-size: var(--fs-1);
-  color: var(--goldleaf);
+  counter-increment: steg; content: counter(steg,decimal-leading-zero);
+  position:absolute; left:0; top:-.35em;
+  width:3rem; height:3rem; display:grid; place-items:center;
+  border:1px solid var(--gold); border-radius:50%;
+  font-family: var(--font-display); font-size: var(--fs-1); color: var(--gold-soft);
 }
-.step h3 { color: var(--ylang); margin-bottom: var(--s-2); }
-.step p { margin: 0; }
-
-/* ---------------------------------------------------------------------
-   Vanliga frågor
-   --------------------------------------------------------------------- */
-
-.faq { display: grid; gap: 0; max-width: var(--measure); }
-.faq__item { border-top: 1px solid var(--line); padding: var(--s-5) 0; }
-.faq__item:last-child { border-bottom: 1px solid var(--line); }
-.faq__q { margin: 0 0 var(--s-2); color: var(--jade); }
-.faq__a { margin: 0; color: var(--ink-muted); }
+.step h3 { color: var(--on-dark); margin-bottom: var(--s-2); }
+.step p { margin:0; }
 
 /* ---------------------------------------------------------------------
    Bokning
@@ -524,141 +529,82 @@ code {
    --------------------------------------------------------------------- */
 
 .booking { margin-bottom: var(--s-5); }
-
 .booking__gate {
-  border: 1px solid var(--line); border-radius: var(--r-lg);
-  background: var(--paper); padding: clamp(var(--s-6), 5vw, var(--s-8));
-  text-align: center; box-shadow: var(--shadow-1);
+  border-radius: var(--r-xl); background: var(--paper-3);
+  padding: clamp(var(--s-7), 6vw, var(--s-9)); text-align:center;
+  box-shadow: var(--sh-2);
 }
-.booking__gate-text { color: var(--ink-muted); margin: 0 auto var(--s-5); max-width: 34em; }
-.booking__choices { display: flex; flex-wrap: wrap; gap: var(--s-3); justify-content: center; }
+.booking__gate-text { color: var(--ink-soft); margin: 0 auto var(--s-6); max-width: 34em; }
+.booking__choices { display:flex; flex-wrap:wrap; gap: var(--s-3); justify-content:center; }
 
-.booking__tabs { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-bottom: var(--s-5); }
+.booking__tabs { display:flex; flex-wrap:wrap; gap: var(--s-2); margin-bottom: var(--s-5); }
 .booking__tab {
-  font: inherit; font-size: var(--fs--1); font-weight: 600; cursor: pointer;
+  font:inherit; font-size: var(--fs--1); font-weight:600; cursor:pointer;
   padding: var(--s-2) var(--s-5); min-height: var(--tap);
-  border: 1px solid var(--line-strong); border-radius: var(--r-full);
-  background: var(--paper); color: var(--jade);
+  border:1px solid var(--line-2); border-radius: var(--r-full);
+  background: var(--paper-3); color: var(--forest);
   transition: background-color var(--speed) var(--ease), color var(--speed) var(--ease);
 }
-.booking__tab[aria-pressed="true"] { background: var(--jade); color: #FFFFFF; border-color: var(--jade); }
+.booking__tab[aria-pressed="true"] { background: var(--deep); color:#fff; border-color: var(--deep); }
 
-.booking__mount { border-radius: var(--r-lg); overflow: hidden; }
-
+.booking__mount { border-radius: var(--r-lg); overflow:hidden; box-shadow: var(--sh-1); }
 .booking__setup, .booking__error {
-  border: 1px solid var(--line-strong); border-radius: var(--r-md);
-  background: var(--jasmine-2); padding: var(--s-5);
+  border:1px solid var(--line-2); border-radius: var(--r-md);
+  background: var(--paper-2); padding: var(--s-5);
 }
-.booking__fallback { color: var(--ink-muted); }
+.booking__fallback { color: var(--ink-soft); }
 
 /* ---------------------------------------------------------------------
-   Öppettider och kontakt
+   Öppettider, kontakt, 360-vy
    --------------------------------------------------------------------- */
 
-.hours { margin: 0; }
+.hours { margin:0; }
 .hours__row {
-  display: flex; justify-content: space-between; gap: var(--s-5);
+  display:flex; justify-content:space-between; gap: var(--s-5);
   padding: var(--s-3) 0; border-bottom: 1px solid var(--line);
 }
-.hours__row dt { font-weight: 600; }
-.hours__row dd { margin: 0; color: var(--ink-muted); }
+.hours__row dt { font-weight:600; }
+.hours__row dd { margin:0; color: var(--ink-soft); }
 
-.contact { display: grid; gap: var(--s-7); }
-.contact__address { font-style: normal; margin-bottom: var(--s-5); line-height: var(--lh-body); }
-.contact__phone { font-family: var(--font-display); font-size: var(--fs-2); font-weight: 500; margin-bottom: var(--s-2); }
-.contact__phone a { text-decoration: none; }
+.contact { display:grid; gap: clamp(var(--s-7), 5vw, var(--s-8)); }
+.contact__address { font-style:normal; margin-bottom: var(--s-5); }
+.contact__phone {
+  font-family: var(--font-display); font-size: var(--fs-3); font-weight:600;
+  margin-bottom: var(--s-2); line-height:1.1;
+}
+.contact__phone a { text-decoration:none; color: var(--deep); }
 
-.portrait { border-radius: var(--r-md); border: 1px solid var(--line); margin-bottom: var(--s-4); }
+.portrait {
+  border-radius: var(--r-lg); margin-bottom: var(--s-4);
+  box-shadow: var(--sh-2);
+}
 
 .photo { margin: var(--s-7) 0 0; }
-.photo img { border-radius: var(--r-lg); width: 100%; }
-.photo figcaption { font-size: var(--fs--1); color: var(--ink-muted); margin-top: var(--s-3); }
-
-/* ---------------------------------------------------------------------
-   360-vy
-   --------------------------------------------------------------------- */
+.photo img { border-radius: var(--r-xl); width:100%; box-shadow: var(--sh-2); }
+.photo figcaption { font-size: var(--fs--1); color: var(--ink-soft); margin-top: var(--s-3); }
 
 .streetview { margin-top: var(--s-8); }
 .streetview__title { margin-bottom: var(--s-4); }
 .streetview__gate {
-  border: 1px solid var(--line); border-radius: var(--r-lg);
-  background: var(--jasmine-2); padding: var(--s-6); text-align: center;
+  border-radius: var(--r-xl); background: var(--paper-3);
+  padding: clamp(var(--s-6), 5vw, var(--s-7)); text-align:center; box-shadow: var(--sh-1);
 }
-.streetview__text { color: var(--ink-muted); margin: 0 auto var(--s-4); max-width: 34em; }
+.streetview__text { color: var(--ink-soft); margin: 0 auto var(--s-5); max-width: 34em; }
 .streetview__frame iframe {
-  width: 100%; height: clamp(18rem, 45vw, 26rem);
-  border: 0; border-radius: var(--r-lg); display: block;
-}
-
-/* ---------------------------------------------------------------------
-   Textsidor — integritetspolicyn och 404
-
-   De delar stilmall med startsidan men har ingen hero, så sidhuvudet är
-   jasminvitt från början (klassen sätts av js/main.js).
-   --------------------------------------------------------------------- */
-
-.page { padding-block: var(--section-y); }
-
-.prose { max-width: var(--measure); }
-.prose h1 { margin-bottom: var(--s-5); }
-.prose h2 {
-  font-size: var(--fs-2); margin-top: var(--s-8); margin-bottom: var(--s-4);
-  padding-top: var(--s-5); border-top: 1px solid var(--line);
-}
-.prose h3 { font-size: var(--fs-1); margin-top: var(--s-6); margin-bottom: var(--s-3); }
-.prose ul { margin: 0 0 var(--s-4); padding-left: var(--s-5); list-style: disc; }
-.prose ul li { margin-bottom: var(--s-2); }
-.prose__updated { color: var(--ink-muted); font-size: var(--fs--1); }
-
-/* Gul ruta med det som måste fyllas i innan sidan visas för kunder.
-   Den ska sticka ut — den är en påminnelse, inte innehåll. Tas bort när
-   organisationsnummer och e-postadress är ifyllda. */
-.prose__note {
-  background: #FFF6DA;
-  /* Guld mäter bara 2,4:1 mot den gula botten. Den här mörkare tonen
-     ger 4,7:1 och klarar därmed kravet på 3:1 för grafik med marginal. */
-  border: 1px solid #8A6A15;
-  border-left-width: 5px;
-  border-radius: var(--r-md);
-  padding: var(--s-5);
-  margin-bottom: var(--s-6);
-  color: var(--ink);
-}
-.prose__note :last-child { margin-bottom: 0; }
-
-/* Mittställd text på 404-sidan */
-.lead { font-size: var(--fs-1); color: var(--ink-muted); }
-
-/* 404-sidan */
-.notfound { padding-block: var(--section-y); text-align: center; }
-.notfound__code {
-  font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(var(--fs-4), 12vw, 6rem); line-height: 1;
-  color: var(--goldleaf); margin: 0 0 var(--s-4);
-}
-.notfound .lead { margin-inline: auto; }
-.notfound__actions {
-  display: flex; flex-wrap: wrap; gap: var(--s-3);
-  justify-content: center; margin-top: var(--s-6);
+  width:100%; height: clamp(20rem, 46vw, 30rem);
+  border:0; border-radius: var(--r-xl); display:block; box-shadow: var(--sh-2);
 }
 
 /* ---------------------------------------------------------------------
    Sidfot
    --------------------------------------------------------------------- */
 
-.site-foot {
-  position: relative;
-  background: var(--lacquer); color: var(--on-lacq-muted);
-  padding-block: clamp(var(--s-7), 7vw, var(--s-8));
-}
-.site-foot .kanok { position: absolute; top: 0; left: 0; right: 0; }
-.site-foot__inner { display: grid; gap: var(--s-6); }
+.site-foot { padding-block: clamp(var(--s-8), 8vw, var(--s-9)); }
+.site-foot__inner { display:grid; gap: var(--s-6); position:relative; z-index:1; }
 .site-foot__brand {
-  font-family: var(--font-display); font-weight: 600; font-size: var(--fs-1);
-  color: var(--goldleaf); margin-bottom: var(--s-2);
+  font-family: var(--font-display); font-weight:600; font-size: var(--fs-2);
+  color: var(--on-dark); margin-bottom: var(--s-2);
 }
-.site-foot a { color: var(--ylang); }
-.site-foot a:hover { color: var(--marigold); }
 .site-foot__copy { font-size: var(--fs--1); }
 
 /* ---------------------------------------------------------------------
@@ -666,25 +612,52 @@ code {
    --------------------------------------------------------------------- */
 
 .mobile-cta {
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
-  display: flex; gap: var(--s-3);
+  position:fixed; left:0; right:0; bottom:0; z-index:50;
+  display:flex; gap: var(--s-3);
   padding: var(--s-3) var(--gutter);
   padding-bottom: calc(var(--s-3) + env(safe-area-inset-bottom, 0px));
-  background: rgba(251, 247, 238, 0.96);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(10px);
+  border-top:1px solid var(--line);
+  box-shadow: 0 -6px 24px rgba(6,50,45,.07);
 }
-.mobile-cta .btn { flex: 1; }
-.mobile-cta .btn--quiet { flex: 0 0 auto; }
-body.has-mobile-cta { padding-bottom: 5rem; }
+.mobile-cta .btn { flex:1; }
+.mobile-cta .btn--quiet { flex:0 0 auto; }
+body.has-mobile-cta { padding-bottom: 5.5rem; }
+
+/* Intoning när en sektion rullas in — endast opacitet */
+.reveal { opacity:0; transition: opacity .6s var(--ease); }
+.reveal.is-visible { opacity:1; }
 
 /* ---------------------------------------------------------------------
-   Intoning när en sektion rullas in i bild.
-   Klassen sätts av js/main.js. Endast opacitet — ingen förflyttning.
+   Textsidor — integritetspolicyn och 404
    --------------------------------------------------------------------- */
 
-.reveal { opacity: 0; transition: opacity 0.45s var(--ease); }
-.reveal.is-visible { opacity: 1; }
+.page { padding-block: var(--section-y); }
+.prose { max-width: var(--measure); }
+.prose h1 { margin-bottom: var(--s-5); }
+.prose h2 {
+  font-size: var(--fs-2); margin-top: var(--s-8); margin-bottom: var(--s-4);
+  padding-top: var(--s-5); border-top:1px solid var(--line);
+}
+.prose h3 { font-size: var(--fs-1); margin-top: var(--s-6); margin-bottom: var(--s-3); }
+.prose ul { margin: 0 0 var(--s-4); padding-left: var(--s-5); list-style: disc; }
+.prose ul li { margin-bottom: var(--s-2); }
+.prose__updated { color: var(--ink-soft); font-size: var(--fs--1); }
+.prose__note {
+  background:#FFF6DA; border:1px solid #8A6A15; border-left-width:5px;
+  border-radius: var(--r-md); padding: var(--s-5); margin-bottom: var(--s-6); color: var(--ink);
+}
+.prose__note :last-child { margin-bottom:0; }
+
+.notfound { padding-block: var(--section-y); text-align:center; }
+.notfound__code {
+  font-family: var(--font-display); font-weight:600;
+  font-size: clamp(var(--fs-4), 14vw, 7rem); line-height:1;
+  color: var(--forest); margin: 0 0 var(--s-4);
+}
+.notfound .lead { margin-inline:auto; }
+.notfound__actions { display:flex; flex-wrap:wrap; gap: var(--s-3); justify-content:center; margin-top: var(--s-6); }
 
 /* ---------------------------------------------------------------------
    Större skärmar
@@ -692,73 +665,58 @@ body.has-mobile-cta { padding-bottom: 5rem; }
 
 @media (min-width: 48em) {
   .treatments { grid-template-columns: 1fr 1fr; }
-  .contact { grid-template-columns: 1fr 1fr; align-items: start; }
-  .about__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); align-items: center; }
-  .steps { grid-template-columns: repeat(3, 1fr); gap: var(--s-7); }
-  .site-foot__inner { grid-template-columns: repeat(2, auto); justify-content: space-between; gap: var(--s-6) var(--s-8); }
+  .contact { grid-template-columns: 1fr 1fr; align-items:start; }
+  .about__grid { grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); }
+  .steps { grid-template-columns: repeat(3,1fr); }
+  .site-foot__inner { grid-template-columns: repeat(2,auto); justify-content:space-between; gap: var(--s-6) var(--s-8); }
 }
-
 @media (min-width: 64em) {
-  .site-foot__inner { grid-template-columns: repeat(4, auto); }
+  .site-foot__inner { grid-template-columns: repeat(4,auto); }
 }
 
 /* ---------------------------------------------------------------------
-   Mobil — menyn fälls ihop bakom en knapp
+   Mobil
    --------------------------------------------------------------------- */
 
 @media (max-width: 47.99em) {
   .nav-toggle {
-    display: inline-flex; align-items: center; gap: var(--s-2);
+    display:inline-flex; align-items:center; gap: var(--s-2);
     min-height: var(--tap); padding: var(--s-2) var(--s-4);
-    background: transparent; border: 1px solid var(--goldleaf);
-    border-radius: var(--r-full); color: var(--goldleaf);
-    font: inherit; font-size: var(--fs--1); font-weight: 600; cursor: pointer;
+    background:transparent; border:1px solid var(--gold); border-radius: var(--r-full);
+    color: var(--gold-soft); font:inherit; font-size: var(--fs--1); font-weight:600; cursor:pointer;
   }
-  .site-head.is-solid .nav-toggle { border-color: var(--line-strong); color: var(--jade); }
+  .site-head.is-solid .nav-toggle { border-color: var(--line-2); color: var(--forest); }
+  .nav-toggle__bars { display:inline-grid; gap:3px; width:1rem; }
+  .nav-toggle__bars span { display:block; height:2px; background:currentColor; border-radius:2px; }
 
-  .nav-toggle__bars { display: inline-grid; gap: 3px; width: 1rem; }
-  .nav-toggle__bars span { display: block; height: 2px; background: currentColor; border-radius: 2px; }
-
-  .js .nav { display: none; }
+  .js .nav { display:none; }
   .js .nav[data-open="true"] {
-    display: block;
-    position: absolute; top: var(--head-h); left: 0; right: 0;
-    background: var(--jasmine); border-bottom: 1px solid var(--line);
-    box-shadow: var(--shadow-2);
-    padding: var(--s-4) var(--gutter) var(--s-5);
+    display:block; position:absolute; top: var(--head-h); left:0; right:0;
+    background: var(--paper); border-bottom:1px solid var(--line);
+    box-shadow: var(--sh-3); padding: var(--s-4) var(--gutter) var(--s-5);
   }
-  .js .nav[data-open="true"] .nav__list { flex-direction: column; align-items: stretch; gap: 0; }
-  .js .nav[data-open="true"] a { color: var(--ink); display: block; padding: var(--s-3) 0; }
+  .js .nav[data-open="true"] .nav__list { flex-direction:column; align-items:stretch; gap:0; }
+  .js .nav[data-open="true"] a { color: var(--ink); justify-content:flex-start; padding: var(--s-3) 0; }
   .js .nav[data-open="true"] .nav__cta { margin-top: var(--s-3); }
-  .js .nav[data-open="true"] .nav__cta .btn { color: var(--jade); border-color: var(--line-strong); }
+  .js .nav[data-open="true"] .nav__cta .btn { color: var(--forest); border-color: var(--line-2); }
 
-  .hero__media img { object-position: 62% 45%; }
-
-  /* På smal skärm ligger texten över hela bilden i stället för bara över
-     den mörka vänsterkanten, så gradienten måste vara kraftigare här.
-     Uppmätt mot ljusaste pixeln bakom ingressen: 5,5:1 med den vågräta
-     gradienten, 7,4:1 med den här. Kravet är 4,5:1 — marginalen finns
-     för att bilden ska kunna bytas mot en ljusare utan att texten fallerar. */
-  .hero__media::after {
-    background:
-      linear-gradient(180deg, rgba(28,20,9,0.93) 0%, rgba(28,20,9,0.88) 60%, rgba(28,20,9,0.82) 100%),
-      linear-gradient(to bottom, rgba(28,20,9,0.45), rgba(28,20,9,0.45));
-  }
+  .hero__media img { object-position: 66% 45%; -webkit-mask-image:none; mask-image:none; opacity:.34; }
+  .about__photo::before { display:none; }
 }
 
 /* ---------------------------------------------------------------------
-   Mindre rörelse — respekterar systeminställningen
+   Mindre rörelse
    --------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html { scroll-behavior:auto; }
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
   }
-  .js .kanok--draw { animation: none; }
-  .reveal { opacity: 1; }
+  .js .hero .hairline { animation:none; }
+  .reveal { opacity:1; }
+  .treatment:hover { transform:none; }
 }
 
 /* ---------------------------------------------------------------------
@@ -766,9 +724,9 @@ body.has-mobile-cta { padding-bottom: 5rem; }
    --------------------------------------------------------------------- */
 
 @media print {
-  .site-head, .mobile-cta, .booking, .skip, .streetview, .kanok { display: none !important; }
-  body { background: #FFFFFF; color: #000000; }
-  .band--lacquer, .site-foot, .hero { background: #FFFFFF !important; color: #000000 !important; }
-  .hero__media { display: none; }
-  .hero__title, .band--lacquer h2, .band--lacquer h3, .site-foot__brand { color: #000000 !important; }
+  .site-head, .mobile-cta, .booking, .skip, .streetview, .hero__monster { display:none !important; }
+  body { background:#fff; color:#000; }
+  .band, .site-foot, .hero { background:#fff !important; color:#000 !important; background-image:none !important; }
+  .hero__media { display:none; }
+  .hero__title, .band h2, .band h3, .site-foot__brand, .step h3 { color:#000 !important; }
 }

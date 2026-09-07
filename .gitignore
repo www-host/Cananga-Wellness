@@ -1,2 +1,6 @@
 .playwright-mcp/
 bilder.json
+ylang.json
+# Referensbilderna ligger kvar lokalt men publiceras inte — de är
+# designunderlag, inte något sidan använder, och väger 7 MB.
+img/Screenshot*.png
