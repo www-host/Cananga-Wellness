@@ -167,16 +167,15 @@
         UNDANTAG, med flit:
           .hero       — ligger överst och ska synas direkt
           #boka       — bokningskalendern
-          #kontakt    — 360-vyn
-        De två sista innehåller inbäddat innehåll från andra sajter. En
-        förälder som animeras kan skapa ett eget koordinatsystem, vilket
-        stör hur en iframe placerar sig. Ta inte bort det undantaget.
+        Bokningen innehåller en iframe från Cal.com. En förälder som
+        animeras kan skapa ett eget koordinatsystem, vilket stör hur en
+        iframe placerar sig. Ta inte bort det undantaget.
      --------------------------------------------------------------- */
   var villHaMindreRorelse = window.matchMedia &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!villHaMindreRorelse && 'IntersectionObserver' in window) {
-    var undantag = { 'boka': true, 'kontakt': true };
+    var undantag = { 'boka': true };
 
     var sektioner = [].slice.call(document.querySelectorAll('main > section'))
       .filter(function (el) {

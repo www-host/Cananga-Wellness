@@ -623,7 +623,7 @@ code {
 .booking__fallback { color: var(--ink-soft); }
 
 /* ---------------------------------------------------------------------
-   Öppettider, kontakt, 360-vy
+   Öppettider och kontakt
    --------------------------------------------------------------------- */
 
 .hours { margin:0; }
@@ -650,18 +650,6 @@ code {
 .photo { margin: var(--s-7) 0 0; }
 .photo img { border-radius: var(--r-xl); width:100%; box-shadow: var(--sh-2); }
 .photo figcaption { font-size: var(--fs--1); color: var(--ink-soft); margin-top: var(--s-3); }
-
-.streetview { margin-top: var(--s-8); }
-.streetview__title { margin-bottom: var(--s-4); }
-.streetview__gate {
-  border-radius: var(--r-xl); background: var(--paper-3);
-  padding: clamp(var(--s-6), 5vw, var(--s-7)); text-align:center; box-shadow: var(--sh-1);
-}
-.streetview__text { color: var(--ink-soft); margin: 0 auto var(--s-5); max-width: 34em; }
-.streetview__frame iframe {
-  width:100%; height: clamp(20rem, 46vw, 30rem);
-  border:0; border-radius: var(--r-xl); display:block; box-shadow: var(--sh-2);
-}
 
 /* ---------------------------------------------------------------------
    Sidfot
@@ -792,7 +780,7 @@ body.has-mobile-cta { padding-bottom: 5.5rem; }
    --------------------------------------------------------------------- */
 
 @media print {
-  .site-head, .mobile-cta, .booking, .skip, .streetview, .hero__monster { display:none !important; }
+  .site-head, .mobile-cta, .booking, .skip, .hero__monster { display:none !important; }
   body { background:#fff; color:#000; }
   .band, .site-foot, .hero { background:#fff !important; color:#000 !important; background-image:none !important; }
   .hero__media { display:none; }
